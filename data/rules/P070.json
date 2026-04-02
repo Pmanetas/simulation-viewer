@@ -1,0 +1,32 @@
+{
+  "rule_id": "P070",
+  "rule_name": "Floor Play OVER",
+  "category": "market",
+  "description": "Line is below player's minimum of last 10 games \u2014 guaranteed OVER",
+  "params": {
+    "min_games": 10
+  },
+  "summary": {
+    "total_bets": 0,
+    "wins": 0,
+    "win_pct": 0,
+    "start_bank": 1000,
+    "final_bank": 1000,
+    "total_profit": 0,
+    "roi": 0,
+    "max_drawdown_pct": 0,
+    "max_losing_streak": 0,
+    "stake": 50
+  },
+  "yearly": {},
+  "rounds": {},
+  "equity_curve": [
+    {
+      "date": "",
+      "bank": 1000,
+      "bet_num": 0
+    }
+  ],
+  "bets": [],
+  "generated": "2026-03-08T16:43:44.443279"
+}

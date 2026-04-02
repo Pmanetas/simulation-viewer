@@ -1,0 +1,5064 @@
+{
+  "rule_id": "P065",
+  "rule_name": "Pure Midfielder OVER",
+  "category": "consistency",
+  "description": "Player averages < 0.3 goals \u2014 pure ball-winner, consistent disposals, bet OVER if avg > line",
+  "params": {
+    "max_goals": 0.3,
+    "min_games": 8,
+    "avg_margin": 1.0
+  },
+  "summary": {
+    "total_bets": 238,
+    "wins": 133,
+    "win_pct": 55.9,
+    "start_bank": 1000,
+    "final_bank": 1511.5,
+    "total_profit": 511.5,
+    "roi": 4.3,
+    "max_drawdown_pct": 31.1,
+    "max_losing_streak": 5,
+    "stake": 50
+  },
+  "yearly": {
+    "2023": {
+      "bets": 9,
+      "wins": 4,
+      "profit": -74.5,
+      "win_pct": 44.4,
+      "roi": -16.6
+    },
+    "2024": {
+      "bets": 39,
+      "wins": 22,
+      "profit": 117.5,
+      "win_pct": 56.4,
+      "roi": 6.0
+    },
+    "2025": {
+      "bets": 190,
+      "wins": 107,
+      "profit": 468.5,
+      "win_pct": 56.3,
+      "roi": 4.9
+    }
+  },
+  "rounds": {
+    "2023": {
+      "13": {
+        "bets": 3,
+        "wins": 1,
+        "win_pct": 33.3
+      },
+      "14": {
+        "bets": 1,
+        "wins": 1,
+        "win_pct": 100.0
+      },
+      "17": {
+        "bets": 1,
+        "wins": 1,
+        "win_pct": 100.0
+      },
+      "20": {
+        "bets": 1,
+        "wins": 1,
+        "win_pct": 100.0
+      },
+      "21": {
+        "bets": 1,
+        "wins": 0,
+        "win_pct": 0.0
+      },
+      "24": {
+        "bets": 2,
+        "wins": 0,
+        "win_pct": 0.0
+      }
+    },
+    "2024": {
+      "1": {
+        "bets": 2,
+        "wins": 0,
+        "win_pct": 0.0
+      },
+      "2": {
+        "bets": 3,
+        "wins": 2,
+        "win_pct": 66.7
+      },
+      "3": {
+        "bets": 3,
+        "wins": 3,
+        "win_pct": 100.0
+      },
+      "4": {
+        "bets": 2,
+        "wins": 1,
+        "win_pct": 50.0
+      },
+      "5": {
+        "bets": 2,
+        "wins": 1,
+        "win_pct": 50.0
+      },
+      "6": {
+        "bets": 3,
+        "wins": 0,
+        "win_pct": 0.0
+      },
+      "7": {
+        "bets": 3,
+        "wins": 3,
+        "win_pct": 100.0
+      },
+      "8": {
+        "bets": 5,
+        "wins": 3,
+        "win_pct": 60.0
+      },
+      "9": {
+        "bets": 2,
+        "wins": 1,
+        "win_pct": 50.0
+      },
+      "10": {
+        "bets": 2,
+        "wins": 0,
+        "win_pct": 0.0
+      },
+      "12": {
+        "bets": 2,
+        "wins": 2,
+        "win_pct": 100.0
+      },
+      "13": {
+        "bets": 3,
+        "wins": 1,
+        "win_pct": 33.3
+      },
+      "14": {
+        "bets": 1,
+        "wins": 1,
+        "win_pct": 100.0
+      },
+      "15": {
+        "bets": 2,
+        "wins": 2,
+        "win_pct": 100.0
+      },
+      "16": {
+        "bets": 1,
+        "wins": 1,
+        "win_pct": 100.0
+      },
+      "18": {
+        "bets": 1,
+        "wins": 1,
+        "win_pct": 100.0
+      },
+      "24": {
+        "bets": 2,
+        "wins": 0,
+        "win_pct": 0.0
+      }
+    },
+    "2025": {
+      "0": {
+        "bets": 1,
+        "wins": 0,
+        "win_pct": 0.0
+      },
+      "1": {
+        "bets": 3,
+        "wins": 3,
+        "win_pct": 100.0
+      },
+      "2": {
+        "bets": 1,
+        "wins": 1,
+        "win_pct": 100.0
+      },
+      "3": {
+        "bets": 2,
+        "wins": 2,
+        "win_pct": 100.0
+      },
+      "5": {
+        "bets": 3,
+        "wins": 2,
+        "win_pct": 66.7
+      },
+      "6": {
+        "bets": 4,
+        "wins": 3,
+        "win_pct": 75.0
+      },
+      "7": {
+        "bets": 4,
+        "wins": 1,
+        "win_pct": 25.0
+      },
+      "8": {
+        "bets": 5,
+        "wins": 2,
+        "win_pct": 40.0
+      },
+      "9": {
+        "bets": 2,
+        "wins": 1,
+        "win_pct": 50.0
+      },
+      "10": {
+        "bets": 4,
+        "wins": 2,
+        "win_pct": 50.0
+      },
+      "11": {
+        "bets": 3,
+        "wins": 2,
+        "win_pct": 66.7
+      },
+      "12": {
+        "bets": 4,
+        "wins": 1,
+        "win_pct": 25.0
+      },
+      "13": {
+        "bets": 5,
+        "wins": 3,
+        "win_pct": 60.0
+      },
+      "14": {
+        "bets": 15,
+        "wins": 7,
+        "win_pct": 46.7
+      },
+      "15": {
+        "bets": 9,
+        "wins": 7,
+        "win_pct": 77.8
+      },
+      "16": {
+        "bets": 10,
+        "wins": 5,
+        "win_pct": 50.0
+      },
+      "17": {
+        "bets": 14,
+        "wins": 7,
+        "win_pct": 50.0
+      },
+      "18": {
+        "bets": 7,
+        "wins": 3,
+        "win_pct": 42.9
+      },
+      "19": {
+        "bets": 12,
+        "wins": 6,
+        "win_pct": 50.0
+      },
+      "20": {
+        "bets": 16,
+        "wins": 8,
+        "win_pct": 50.0
+      },
+      "21": {
+        "bets": 16,
+        "wins": 9,
+        "win_pct": 56.2
+      },
+      "22": {
+        "bets": 11,
+        "wins": 8,
+        "win_pct": 72.7
+      },
+      "23": {
+        "bets": 8,
+        "wins": 5,
+        "win_pct": 62.5
+      },
+      "24": {
+        "bets": 9,
+        "wins": 5,
+        "win_pct": 55.6
+      },
+      "QF": {
+        "bets": 22,
+        "wins": 14,
+        "win_pct": 63.6
+      }
+    }
+  },
+  "equity_curve": [
+    {
+      "date": "",
+      "bank": 1000,
+      "bet_num": 0
+    },
+    {
+      "date": "2023-06-10",
+      "bank": 950,
+      "bet_num": 1
+    },
+    {
+      "date": "2023-06-10",
+      "bank": 900,
+      "bet_num": 2
+    },
+    {
+      "date": "2023-06-11",
+      "bank": 939.0,
+      "bet_num": 3
+    },
+    {
+      "date": "2023-06-17",
+      "bank": 984.5,
+      "bet_num": 4
+    },
+    {
+      "date": "2023-07-09",
+      "bank": 1029.5,
+      "bet_num": 5
+    },
+    {
+      "date": "2023-07-29",
+      "bank": 1075.5,
+      "bet_num": 6
+    },
+    {
+      "date": "2023-08-05",
+      "bank": 1025.5,
+      "bet_num": 7
+    },
+    {
+      "date": "2023-08-26",
+      "bank": 975.5,
+      "bet_num": 8
+    },
+    {
+      "date": "2023-08-27",
+      "bank": 925.5,
+      "bet_num": 9
+    },
+    {
+      "date": "2024-03-16",
+      "bank": 875.5,
+      "bet_num": 10
+    },
+    {
+      "date": "2024-03-17",
+      "bank": 825.5,
+      "bet_num": 11
+    },
+    {
+      "date": "2024-03-21",
+      "bank": 868.0,
+      "bet_num": 12
+    },
+    {
+      "date": "2024-03-23",
+      "bank": 818.0,
+      "bet_num": 13
+    },
+    {
+      "date": "2024-03-23",
+      "bank": 858.5,
+      "bet_num": 14
+    },
+    {
+      "date": "2024-03-30",
+      "bank": 901.0,
+      "bet_num": 15
+    },
+    {
+      "date": "2024-03-30",
+      "bank": 944.0,
+      "bet_num": 16
+    },
+    {
+      "date": "2024-04-01",
+      "bank": 990.5,
+      "bet_num": 17
+    },
+    {
+      "date": "2024-04-05",
+      "bank": 1039.0,
+      "bet_num": 18
+    },
+    {
+      "date": "2024-04-06",
+      "bank": 989.0,
+      "bet_num": 19
+    },
+    {
+      "date": "2024-04-13",
+      "bank": 939.0,
+      "bet_num": 20
+    },
+    {
+      "date": "2024-04-13",
+      "bank": 982.5,
+      "bet_num": 21
+    },
+    {
+      "date": "2024-04-19",
+      "bank": 932.5,
+      "bet_num": 22
+    },
+    {
+      "date": "2024-04-20",
+      "bank": 882.5,
+      "bet_num": 23
+    },
+    {
+      "date": "2024-04-21",
+      "bank": 832.5,
+      "bet_num": 24
+    },
+    {
+      "date": "2024-04-24",
+      "bank": 872.0,
+      "bet_num": 25
+    },
+    {
+      "date": "2024-04-25",
+      "bank": 915.0,
+      "bet_num": 26
+    },
+    {
+      "date": "2024-04-28",
+      "bank": 959.0,
+      "bet_num": 27
+    },
+    {
+      "date": "2024-05-03",
+      "bank": 1002.5,
+      "bet_num": 28
+    },
+    {
+      "date": "2024-05-04",
+      "bank": 1048.0,
+      "bet_num": 29
+    },
+    {
+      "date": "2024-05-05",
+      "bank": 998.0,
+      "bet_num": 30
+    },
+    {
+      "date": "2024-05-05",
+      "bank": 948.0,
+      "bet_num": 31
+    },
+    {
+      "date": "2024-05-05",
+      "bank": 992.5,
+      "bet_num": 32
+    },
+    {
+      "date": "2024-05-10",
+      "bank": 1039.0,
+      "bet_num": 33
+    },
+    {
+      "date": "2024-05-11",
+      "bank": 989.0,
+      "bet_num": 34
+    },
+    {
+      "date": "2024-05-18",
+      "bank": 939.0,
+      "bet_num": 35
+    },
+    {
+      "date": "2024-05-18",
+      "bank": 889.0,
+      "bet_num": 36
+    },
+    {
+      "date": "2024-05-30",
+      "bank": 933.0,
+      "bet_num": 37
+    },
+    {
+      "date": "2024-06-01",
+      "bank": 978.5,
+      "bet_num": 38
+    },
+    {
+      "date": "2024-06-06",
+      "bank": 928.5,
+      "bet_num": 39
+    },
+    {
+      "date": "2024-06-06",
+      "bank": 971.5,
+      "bet_num": 40
+    },
+    {
+      "date": "2024-06-09",
+      "bank": 921.5,
+      "bet_num": 41
+    },
+    {
+      "date": "2024-06-16",
+      "bank": 966.0,
+      "bet_num": 42
+    },
+    {
+      "date": "2024-06-22",
+      "bank": 1008.5,
+      "bet_num": 43
+    },
+    {
+      "date": "2024-06-23",
+      "bank": 1052.5,
+      "bet_num": 44
+    },
+    {
+      "date": "2024-06-29",
+      "bank": 1099.5,
+      "bet_num": 45
+    },
+    {
+      "date": "2024-07-14",
+      "bank": 1143.0,
+      "bet_num": 46
+    },
+    {
+      "date": "2024-08-24",
+      "bank": 1093.0,
+      "bet_num": 47
+    },
+    {
+      "date": "2024-08-25",
+      "bank": 1043.0,
+      "bet_num": 48
+    },
+    {
+      "date": "2025-03-09",
+      "bank": 993.0,
+      "bet_num": 49
+    },
+    {
+      "date": "2025-03-15",
+      "bank": 1035.5,
+      "bet_num": 50
+    },
+    {
+      "date": "2025-03-16",
+      "bank": 1079.5,
+      "bet_num": 51
+    },
+    {
+      "date": "2025-03-16",
+      "bank": 1122.5,
+      "bet_num": 52
+    },
+    {
+      "date": "2025-03-23",
+      "bank": 1163.5,
+      "bet_num": 53
+    },
+    {
+      "date": "2025-03-29",
+      "bank": 1211.5,
+      "bet_num": 54
+    },
+    {
+      "date": "2025-03-30",
+      "bank": 1254.0,
+      "bet_num": 55
+    },
+    {
+      "date": "2025-04-13",
+      "bank": 1298.0,
+      "bet_num": 56
+    },
+    {
+      "date": "2025-04-13",
+      "bank": 1342.0,
+      "bet_num": 57
+    },
+    {
+      "date": "2025-04-13",
+      "bank": 1292.0,
+      "bet_num": 58
+    },
+    {
+      "date": "2025-04-19",
+      "bank": 1341.0,
+      "bet_num": 59
+    },
+    {
+      "date": "2025-04-19",
+      "bank": 1384.0,
+      "bet_num": 60
+    },
+    {
+      "date": "2025-04-19",
+      "bank": 1431.5,
+      "bet_num": 61
+    },
+    {
+      "date": "2025-04-19",
+      "bank": 1381.5,
+      "bet_num": 62
+    },
+    {
+      "date": "2025-04-25",
+      "bank": 1331.5,
+      "bet_num": 63
+    },
+    {
+      "date": "2025-04-25",
+      "bank": 1376.0,
+      "bet_num": 64
+    },
+    {
+      "date": "2025-04-26",
+      "bank": 1326.0,
+      "bet_num": 65
+    },
+    {
+      "date": "2025-04-26",
+      "bank": 1276.0,
+      "bet_num": 66
+    },
+    {
+      "date": "2025-05-01",
+      "bank": 1226.0,
+      "bet_num": 67
+    },
+    {
+      "date": "2025-05-02",
+      "bank": 1271.0,
+      "bet_num": 68
+    },
+    {
+      "date": "2025-05-02",
+      "bank": 1314.5,
+      "bet_num": 69
+    },
+    {
+      "date": "2025-05-03",
+      "bank": 1264.5,
+      "bet_num": 70
+    },
+    {
+      "date": "2025-05-04",
+      "bank": 1214.5,
+      "bet_num": 71
+    },
+    {
+      "date": "2025-05-11",
+      "bank": 1257.0,
+      "bet_num": 72
+    },
+    {
+      "date": "2025-05-11",
+      "bank": 1207.0,
+      "bet_num": 73
+    },
+    {
+      "date": "2025-05-17",
+      "bank": 1157.0,
+      "bet_num": 74
+    },
+    {
+      "date": "2025-05-17",
+      "bank": 1107.0,
+      "bet_num": 75
+    },
+    {
+      "date": "2025-05-17",
+      "bank": 1150.5,
+      "bet_num": 76
+    },
+    {
+      "date": "2025-05-18",
+      "bank": 1190.0,
+      "bet_num": 77
+    },
+    {
+      "date": "2025-05-23",
+      "bank": 1233.0,
+      "bet_num": 78
+    },
+    {
+      "date": "2025-05-24",
+      "bank": 1183.0,
+      "bet_num": 79
+    },
+    {
+      "date": "2025-05-25",
+      "bank": 1226.5,
+      "bet_num": 80
+    },
+    {
+      "date": "2025-05-30",
+      "bank": 1176.5,
+      "bet_num": 81
+    },
+    {
+      "date": "2025-05-31",
+      "bank": 1126.5,
+      "bet_num": 82
+    },
+    {
+      "date": "2025-06-01",
+      "bank": 1076.5,
+      "bet_num": 83
+    },
+    {
+      "date": "2025-06-01",
+      "bank": 1119.0,
+      "bet_num": 84
+    },
+    {
+      "date": "2025-06-06",
+      "bank": 1162.5,
+      "bet_num": 85
+    },
+    {
+      "date": "2025-06-06",
+      "bank": 1206.0,
+      "bet_num": 86
+    },
+    {
+      "date": "2025-06-07",
+      "bank": 1156.0,
+      "bet_num": 87
+    },
+    {
+      "date": "2025-06-08",
+      "bank": 1200.5,
+      "bet_num": 88
+    },
+    {
+      "date": "2025-06-08",
+      "bank": 1150.5,
+      "bet_num": 89
+    },
+    {
+      "date": "2025-06-12",
+      "bank": 1194.5,
+      "bet_num": 90
+    },
+    {
+      "date": "2025-06-12",
+      "bank": 1234.5,
+      "bet_num": 91
+    },
+    {
+      "date": "2025-06-13",
+      "bank": 1184.5,
+      "bet_num": 92
+    },
+    {
+      "date": "2025-06-13",
+      "bank": 1134.5,
+      "bet_num": 93
+    },
+    {
+      "date": "2025-06-13",
+      "bank": 1183.0,
+      "bet_num": 94
+    },
+    {
+      "date": "2025-06-13",
+      "bank": 1133.0,
+      "bet_num": 95
+    },
+    {
+      "date": "2025-06-14",
+      "bank": 1083.0,
+      "bet_num": 96
+    },
+    {
+      "date": "2025-06-14",
+      "bank": 1131.5,
+      "bet_num": 97
+    },
+    {
+      "date": "2025-06-14",
+      "bank": 1178.0,
+      "bet_num": 98
+    },
+    {
+      "date": "2025-06-14",
+      "bank": 1222.5,
+      "bet_num": 99
+    },
+    {
+      "date": "2025-06-14",
+      "bank": 1172.5,
+      "bet_num": 100
+    },
+    {
+      "date": "2025-06-14",
+      "bank": 1211.5,
+      "bet_num": 101
+    },
+    {
+      "date": "2025-06-15",
+      "bank": 1161.5,
+      "bet_num": 102
+    },
+    {
+      "date": "2025-06-15",
+      "bank": 1111.5,
+      "bet_num": 103
+    },
+    {
+      "date": "2025-06-15",
+      "bank": 1061.5,
+      "bet_num": 104
+    },
+    {
+      "date": "2025-06-19",
+      "bank": 1101.5,
+      "bet_num": 105
+    },
+    {
+      "date": "2025-06-20",
+      "bank": 1144.0,
+      "bet_num": 106
+    },
+    {
+      "date": "2025-06-20",
+      "bank": 1188.0,
+      "bet_num": 107
+    },
+    {
+      "date": "2025-06-21",
+      "bank": 1138.0,
+      "bet_num": 108
+    },
+    {
+      "date": "2025-06-21",
+      "bank": 1182.5,
+      "bet_num": 109
+    },
+    {
+      "date": "2025-06-21",
+      "bank": 1227.0,
+      "bet_num": 110
+    },
+    {
+      "date": "2025-06-22",
+      "bank": 1177.0,
+      "bet_num": 111
+    },
+    {
+      "date": "2025-06-22",
+      "bank": 1219.0,
+      "bet_num": 112
+    },
+    {
+      "date": "2025-06-22",
+      "bank": 1258.5,
+      "bet_num": 113
+    },
+    {
+      "date": "2025-06-26",
+      "bank": 1301.5,
+      "bet_num": 114
+    },
+    {
+      "date": "2025-06-27",
+      "bank": 1251.5,
+      "bet_num": 115
+    },
+    {
+      "date": "2025-06-27",
+      "bank": 1201.5,
+      "bet_num": 116
+    },
+    {
+      "date": "2025-06-27",
+      "bank": 1151.5,
+      "bet_num": 117
+    },
+    {
+      "date": "2025-06-28",
+      "bank": 1199.5,
+      "bet_num": 118
+    },
+    {
+      "date": "2025-06-28",
+      "bank": 1246.5,
+      "bet_num": 119
+    },
+    {
+      "date": "2025-06-28",
+      "bank": 1289.5,
+      "bet_num": 120
+    },
+    {
+      "date": "2025-06-28",
+      "bank": 1239.5,
+      "bet_num": 121
+    },
+    {
+      "date": "2025-06-28",
+      "bank": 1280.0,
+      "bet_num": 122
+    },
+    {
+      "date": "2025-06-29",
+      "bank": 1230.0,
+      "bet_num": 123
+    },
+    {
+      "date": "2025-07-03",
+      "bank": 1180.0,
+      "bet_num": 124
+    },
+    {
+      "date": "2025-07-03",
+      "bank": 1224.5,
+      "bet_num": 125
+    },
+    {
+      "date": "2025-07-04",
+      "bank": 1269.5,
+      "bet_num": 126
+    },
+    {
+      "date": "2025-07-05",
+      "bank": 1219.5,
+      "bet_num": 127
+    },
+    {
+      "date": "2025-07-05",
+      "bank": 1169.5,
+      "bet_num": 128
+    },
+    {
+      "date": "2025-07-05",
+      "bank": 1119.5,
+      "bet_num": 129
+    },
+    {
+      "date": "2025-07-05",
+      "bank": 1158.5,
+      "bet_num": 130
+    },
+    {
+      "date": "2025-07-05",
+      "bank": 1108.5,
+      "bet_num": 131
+    },
+    {
+      "date": "2025-07-05",
+      "bank": 1150.0,
+      "bet_num": 132
+    },
+    {
+      "date": "2025-07-05",
+      "bank": 1100.0,
+      "bet_num": 133
+    },
+    {
+      "date": "2025-07-06",
+      "bank": 1152.0,
+      "bet_num": 134
+    },
+    {
+      "date": "2025-07-06",
+      "bank": 1198.5,
+      "bet_num": 135
+    },
+    {
+      "date": "2025-07-06",
+      "bank": 1148.5,
+      "bet_num": 136
+    },
+    {
+      "date": "2025-07-06",
+      "bank": 1189.0,
+      "bet_num": 137
+    },
+    {
+      "date": "2025-07-10",
+      "bank": 1235.5,
+      "bet_num": 138
+    },
+    {
+      "date": "2025-07-12",
+      "bank": 1185.5,
+      "bet_num": 139
+    },
+    {
+      "date": "2025-07-12",
+      "bank": 1228.0,
+      "bet_num": 140
+    },
+    {
+      "date": "2025-07-12",
+      "bank": 1178.0,
+      "bet_num": 141
+    },
+    {
+      "date": "2025-07-13",
+      "bank": 1222.5,
+      "bet_num": 142
+    },
+    {
+      "date": "2025-07-13",
+      "bank": 1172.5,
+      "bet_num": 143
+    },
+    {
+      "date": "2025-07-13",
+      "bank": 1122.5,
+      "bet_num": 144
+    },
+    {
+      "date": "2025-07-17",
+      "bank": 1072.5,
+      "bet_num": 145
+    },
+    {
+      "date": "2025-07-18",
+      "bank": 1112.0,
+      "bet_num": 146
+    },
+    {
+      "date": "2025-07-18",
+      "bank": 1062.0,
+      "bet_num": 147
+    },
+    {
+      "date": "2025-07-19",
+      "bank": 1012.0,
+      "bet_num": 148
+    },
+    {
+      "date": "2025-07-19",
+      "bank": 1058.5,
+      "bet_num": 149
+    },
+    {
+      "date": "2025-07-19",
+      "bank": 1104.5,
+      "bet_num": 150
+    },
+    {
+      "date": "2025-07-19",
+      "bank": 1054.5,
+      "bet_num": 151
+    },
+    {
+      "date": "2025-07-19",
+      "bank": 1096.0,
+      "bet_num": 152
+    },
+    {
+      "date": "2025-07-19",
+      "bank": 1138.5,
+      "bet_num": 153
+    },
+    {
+      "date": "2025-07-19",
+      "bank": 1088.5,
+      "bet_num": 154
+    },
+    {
+      "date": "2025-07-20",
+      "bank": 1038.5,
+      "bet_num": 155
+    },
+    {
+      "date": "2025-07-20",
+      "bank": 1081.0,
+      "bet_num": 156
+    },
+    {
+      "date": "2025-07-24",
+      "bank": 1031.0,
+      "bet_num": 157
+    },
+    {
+      "date": "2025-07-24",
+      "bank": 1074.5,
+      "bet_num": 158
+    },
+    {
+      "date": "2025-07-24",
+      "bank": 1122.0,
+      "bet_num": 159
+    },
+    {
+      "date": "2025-07-25",
+      "bank": 1166.0,
+      "bet_num": 160
+    },
+    {
+      "date": "2025-07-25",
+      "bank": 1208.5,
+      "bet_num": 161
+    },
+    {
+      "date": "2025-07-25",
+      "bank": 1254.0,
+      "bet_num": 162
+    },
+    {
+      "date": "2025-07-25",
+      "bank": 1204.0,
+      "bet_num": 163
+    },
+    {
+      "date": "2025-07-25",
+      "bank": 1154.0,
+      "bet_num": 164
+    },
+    {
+      "date": "2025-07-25",
+      "bank": 1202.0,
+      "bet_num": 165
+    },
+    {
+      "date": "2025-07-26",
+      "bank": 1152.0,
+      "bet_num": 166
+    },
+    {
+      "date": "2025-07-26",
+      "bank": 1195.0,
+      "bet_num": 167
+    },
+    {
+      "date": "2025-07-26",
+      "bank": 1236.0,
+      "bet_num": 168
+    },
+    {
+      "date": "2025-07-27",
+      "bank": 1186.0,
+      "bet_num": 169
+    },
+    {
+      "date": "2025-07-27",
+      "bank": 1136.0,
+      "bet_num": 170
+    },
+    {
+      "date": "2025-07-27",
+      "bank": 1086.0,
+      "bet_num": 171
+    },
+    {
+      "date": "2025-07-27",
+      "bank": 1036.0,
+      "bet_num": 172
+    },
+    {
+      "date": "2025-07-31",
+      "bank": 986.0,
+      "bet_num": 173
+    },
+    {
+      "date": "2025-07-31",
+      "bank": 1028.0,
+      "bet_num": 174
+    },
+    {
+      "date": "2025-07-31",
+      "bank": 1071.5,
+      "bet_num": 175
+    },
+    {
+      "date": "2025-07-31",
+      "bank": 1115.0,
+      "bet_num": 176
+    },
+    {
+      "date": "2025-08-01",
+      "bank": 1159.0,
+      "bet_num": 177
+    },
+    {
+      "date": "2025-08-02",
+      "bank": 1203.5,
+      "bet_num": 178
+    },
+    {
+      "date": "2025-08-02",
+      "bank": 1153.5,
+      "bet_num": 179
+    },
+    {
+      "date": "2025-08-02",
+      "bank": 1197.0,
+      "bet_num": 180
+    },
+    {
+      "date": "2025-08-02",
+      "bank": 1239.5,
+      "bet_num": 181
+    },
+    {
+      "date": "2025-08-02",
+      "bank": 1280.0,
+      "bet_num": 182
+    },
+    {
+      "date": "2025-08-02",
+      "bank": 1230.0,
+      "bet_num": 183
+    },
+    {
+      "date": "2025-08-02",
+      "bank": 1180.0,
+      "bet_num": 184
+    },
+    {
+      "date": "2025-08-03",
+      "bank": 1221.5,
+      "bet_num": 185
+    },
+    {
+      "date": "2025-08-03",
+      "bank": 1171.5,
+      "bet_num": 186
+    },
+    {
+      "date": "2025-08-03",
+      "bank": 1121.5,
+      "bet_num": 187
+    },
+    {
+      "date": "2025-08-03",
+      "bank": 1071.5,
+      "bet_num": 188
+    },
+    {
+      "date": "2025-08-08",
+      "bank": 1109.5,
+      "bet_num": 189
+    },
+    {
+      "date": "2025-08-08",
+      "bank": 1155.0,
+      "bet_num": 190
+    },
+    {
+      "date": "2025-08-09",
+      "bank": 1197.0,
+      "bet_num": 191
+    },
+    {
+      "date": "2025-08-09",
+      "bank": 1240.0,
+      "bet_num": 192
+    },
+    {
+      "date": "2025-08-10",
+      "bank": 1281.0,
+      "bet_num": 193
+    },
+    {
+      "date": "2025-08-10",
+      "bank": 1322.0,
+      "bet_num": 194
+    },
+    {
+      "date": "2025-08-10",
+      "bank": 1272.0,
+      "bet_num": 195
+    },
+    {
+      "date": "2025-08-10",
+      "bank": 1222.0,
+      "bet_num": 196
+    },
+    {
+      "date": "2025-08-10",
+      "bank": 1265.5,
+      "bet_num": 197
+    },
+    {
+      "date": "2025-08-10",
+      "bank": 1309.5,
+      "bet_num": 198
+    },
+    {
+      "date": "2025-08-10",
+      "bank": 1259.5,
+      "bet_num": 199
+    },
+    {
+      "date": "2025-08-15",
+      "bank": 1301.5,
+      "bet_num": 200
+    },
+    {
+      "date": "2025-08-15",
+      "bank": 1251.5,
+      "bet_num": 201
+    },
+    {
+      "date": "2025-08-16",
+      "bank": 1297.5,
+      "bet_num": 202
+    },
+    {
+      "date": "2025-08-16",
+      "bank": 1247.5,
+      "bet_num": 203
+    },
+    {
+      "date": "2025-08-16",
+      "bank": 1285.5,
+      "bet_num": 204
+    },
+    {
+      "date": "2025-08-16",
+      "bank": 1329.0,
+      "bet_num": 205
+    },
+    {
+      "date": "2025-08-17",
+      "bank": 1279.0,
+      "bet_num": 206
+    },
+    {
+      "date": "2025-08-17",
+      "bank": 1323.0,
+      "bet_num": 207
+    },
+    {
+      "date": "2025-08-22",
+      "bank": 1366.5,
+      "bet_num": 208
+    },
+    {
+      "date": "2025-08-22",
+      "bank": 1406.5,
+      "bet_num": 209
+    },
+    {
+      "date": "2025-08-23",
+      "bank": 1448.0,
+      "bet_num": 210
+    },
+    {
+      "date": "2025-08-23",
+      "bank": 1398.0,
+      "bet_num": 211
+    },
+    {
+      "date": "2025-08-24",
+      "bank": 1348.0,
+      "bet_num": 212
+    },
+    {
+      "date": "2025-08-24",
+      "bank": 1298.0,
+      "bet_num": 213
+    },
+    {
+      "date": "2025-08-24",
+      "bank": 1248.0,
+      "bet_num": 214
+    },
+    {
+      "date": "2025-08-24",
+      "bank": 1291.0,
+      "bet_num": 215
+    },
+    {
+      "date": "2025-08-27",
+      "bank": 1336.5,
+      "bet_num": 216
+    },
+    {
+      "date": "2025-09-04",
+      "bank": 1377.0,
+      "bet_num": 217
+    },
+    {
+      "date": "2025-09-04",
+      "bank": 1418.5,
+      "bet_num": 218
+    },
+    {
+      "date": "2025-09-04",
+      "bank": 1456.0,
+      "bet_num": 219
+    },
+    {
+      "date": "2025-09-04",
+      "bank": 1496.5,
+      "bet_num": 220
+    },
+    {
+      "date": "2025-09-04",
+      "bank": 1446.5,
+      "bet_num": 221
+    },
+    {
+      "date": "2025-09-05",
+      "bank": 1396.5,
+      "bet_num": 222
+    },
+    {
+      "date": "2025-09-05",
+      "bank": 1440.0,
+      "bet_num": 223
+    },
+    {
+      "date": "2025-09-05",
+      "bank": 1390.0,
+      "bet_num": 224
+    },
+    {
+      "date": "2025-09-05",
+      "bank": 1340.0,
+      "bet_num": 225
+    },
+    {
+      "date": "2025-09-06",
+      "bank": 1378.0,
+      "bet_num": 226
+    },
+    {
+      "date": "2025-09-06",
+      "bank": 1328.0,
+      "bet_num": 227
+    },
+    {
+      "date": "2025-09-06",
+      "bank": 1367.5,
+      "bet_num": 228
+    },
+    {
+      "date": "2025-09-06",
+      "bank": 1404.5,
+      "bet_num": 229
+    },
+    {
+      "date": "2025-09-06",
+      "bank": 1449.0,
+      "bet_num": 230
+    },
+    {
+      "date": "2025-09-06",
+      "bank": 1399.0,
+      "bet_num": 231
+    },
+    {
+      "date": "2025-09-06",
+      "bank": 1448.0,
+      "bet_num": 232
+    },
+    {
+      "date": "2025-09-06",
+      "bank": 1489.5,
+      "bet_num": 233
+    },
+    {
+      "date": "2025-09-06",
+      "bank": 1528.0,
+      "bet_num": 234
+    },
+    {
+      "date": "2025-09-06",
+      "bank": 1571.0,
+      "bet_num": 235
+    },
+    {
+      "date": "2025-09-06",
+      "bank": 1611.5,
+      "bet_num": 236
+    },
+    {
+      "date": "2025-09-06",
+      "bank": 1561.5,
+      "bet_num": 237
+    },
+    {
+      "date": "2025-09-06",
+      "bank": 1511.5,
+      "bet_num": 238
+    }
+  ],
+  "bets": [
+    {
+      "date": "2023-06-10",
+      "player": "Andrew Gaff",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.84,
+      "actual": 16.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 950,
+      "confidence": 0.5,
+      "edge": 12.8,
+      "year": 2023,
+      "round": "13"
+    },
+    {
+      "date": "2023-06-10",
+      "player": "Luke Ryan",
+      "line": 22.5,
+      "direction": "OVER",
+      "odds": 1.91,
+      "actual": 16.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 900,
+      "confidence": 0.5,
+      "edge": 5.5,
+      "year": 2023,
+      "round": "13"
+    },
+    {
+      "date": "2023-06-11",
+      "player": "Adam Saad",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.78,
+      "actual": 22.0,
+      "won": true,
+      "profit": 39.0,
+      "bankroll": 939.0,
+      "confidence": 0.5,
+      "edge": 5.4,
+      "year": 2023,
+      "round": "13"
+    },
+    {
+      "date": "2023-06-17",
+      "player": "Luke Ryan",
+      "line": 21.5,
+      "direction": "OVER",
+      "odds": 1.91,
+      "actual": 22.0,
+      "won": true,
+      "profit": 45.5,
+      "bankroll": 984.5,
+      "confidence": 0.5,
+      "edge": 7.6,
+      "year": 2023,
+      "round": "14"
+    },
+    {
+      "date": "2023-07-09",
+      "player": "Luke Ryan",
+      "line": 22.5,
+      "direction": "OVER",
+      "odds": 1.9,
+      "actual": 35.0,
+      "won": true,
+      "profit": 45.0,
+      "bankroll": 1029.5,
+      "confidence": 0.5,
+      "edge": 5.5,
+      "year": 2023,
+      "round": "17"
+    },
+    {
+      "date": "2023-07-29",
+      "player": "Matt Crouch",
+      "line": 24.5,
+      "direction": "OVER",
+      "odds": 1.92,
+      "actual": 32.0,
+      "won": true,
+      "profit": 46.0,
+      "bankroll": 1075.5,
+      "confidence": 0.5,
+      "edge": 6.9,
+      "year": 2023,
+      "round": "20"
+    },
+    {
+      "date": "2023-08-05",
+      "player": "Blake Hardwick",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.91,
+      "actual": 16.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1025.5,
+      "confidence": 0.5,
+      "edge": 15.7,
+      "year": 2023,
+      "round": "21"
+    },
+    {
+      "date": "2023-08-26",
+      "player": "Alex Witherden",
+      "line": 19.5,
+      "direction": "OVER",
+      "odds": 1.86,
+      "actual": 15.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 975.5,
+      "confidence": 0.5,
+      "edge": 13.5,
+      "year": 2023,
+      "round": "24"
+    },
+    {
+      "date": "2023-08-27",
+      "player": "Nick Blakey",
+      "line": 19.5,
+      "direction": "OVER",
+      "odds": 1.75,
+      "actual": 17.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 925.5,
+      "confidence": 0.5,
+      "edge": 6.0,
+      "year": 2023,
+      "round": "24"
+    },
+    {
+      "date": "2024-03-16",
+      "player": "Callum Wilkie",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.98,
+      "actual": 14.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 875.5,
+      "confidence": 0.5,
+      "edge": 7.4,
+      "year": 2024,
+      "round": "1"
+    },
+    {
+      "date": "2024-03-17",
+      "player": "Alex Witherden",
+      "line": 19.5,
+      "direction": "OVER",
+      "odds": 1.79,
+      "actual": 18.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 825.5,
+      "confidence": 0.5,
+      "edge": 11.8,
+      "year": 2024,
+      "round": "1"
+    },
+    {
+      "date": "2024-03-21",
+      "player": "Callum Wilkie",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.85,
+      "actual": 20.0,
+      "won": true,
+      "profit": 42.5,
+      "bankroll": 868.0,
+      "confidence": 0.5,
+      "edge": 7.0,
+      "year": 2024,
+      "round": "2"
+    },
+    {
+      "date": "2024-03-23",
+      "player": "Conor Nash",
+      "line": 23.5,
+      "direction": "OVER",
+      "odds": 1.89,
+      "actual": 20.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 818.0,
+      "confidence": 0.5,
+      "edge": 4.4,
+      "year": 2024,
+      "round": "2"
+    },
+    {
+      "date": "2024-03-23",
+      "player": "Dyson Heppell",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.81,
+      "actual": 21.0,
+      "won": true,
+      "profit": 40.5,
+      "bankroll": 858.5,
+      "confidence": 0.5,
+      "edge": 6.3,
+      "year": 2024,
+      "round": "2"
+    },
+    {
+      "date": "2024-03-30",
+      "player": "Dyson Heppell",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.85,
+      "actual": 30.0,
+      "won": true,
+      "profit": 42.5,
+      "bankroll": 901.0,
+      "confidence": 0.5,
+      "edge": 6.0,
+      "year": 2024,
+      "round": "3"
+    },
+    {
+      "date": "2024-03-30",
+      "player": "Trent Rivers",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.86,
+      "actual": 27.0,
+      "won": true,
+      "profit": 43.0,
+      "bankroll": 944.0,
+      "confidence": 0.5,
+      "edge": 10.6,
+      "year": 2024,
+      "round": "3"
+    },
+    {
+      "date": "2024-04-01",
+      "player": "Conor Nash",
+      "line": 22.5,
+      "direction": "OVER",
+      "odds": 1.93,
+      "actual": 24.0,
+      "won": true,
+      "profit": 46.5,
+      "bankroll": 990.5,
+      "confidence": 0.5,
+      "edge": 6.1,
+      "year": 2024,
+      "round": "3"
+    },
+    {
+      "date": "2024-04-05",
+      "player": "Dyson Heppell",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.97,
+      "actual": 25.0,
+      "won": true,
+      "profit": 48.5,
+      "bankroll": 1039.0,
+      "confidence": 0.5,
+      "edge": 8.0,
+      "year": 2024,
+      "round": "4"
+    },
+    {
+      "date": "2024-04-06",
+      "player": "Luke Ryan",
+      "line": 23.5,
+      "direction": "OVER",
+      "odds": 1.86,
+      "actual": 22.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 989.0,
+      "confidence": 0.5,
+      "edge": 5.2,
+      "year": 2024,
+      "round": "4"
+    },
+    {
+      "date": "2024-04-13",
+      "player": "James Sicily",
+      "line": 22.5,
+      "direction": "OVER",
+      "odds": 1.93,
+      "actual": 19.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 939.0,
+      "confidence": 0.5,
+      "edge": 14.4,
+      "year": 2024,
+      "round": "5"
+    },
+    {
+      "date": "2024-04-13",
+      "player": "Luke Ryan",
+      "line": 22.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 24.0,
+      "won": true,
+      "profit": 43.5,
+      "bankroll": 982.5,
+      "confidence": 0.5,
+      "edge": 11.7,
+      "year": 2024,
+      "round": "5"
+    },
+    {
+      "date": "2024-04-19",
+      "player": "Dyson Heppell",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.89,
+      "actual": 13.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 932.5,
+      "confidence": 0.5,
+      "edge": 8.0,
+      "year": 2024,
+      "round": "6"
+    },
+    {
+      "date": "2024-04-20",
+      "player": "Alex Witherden",
+      "line": 17.5,
+      "direction": "OVER",
+      "odds": 1.9,
+      "actual": 12.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 882.5,
+      "confidence": 0.5,
+      "edge": 16.6,
+      "year": 2024,
+      "round": "6"
+    },
+    {
+      "date": "2024-04-21",
+      "player": "James Sicily",
+      "line": 22.5,
+      "direction": "OVER",
+      "odds": 1.92,
+      "actual": 19.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 832.5,
+      "confidence": 0.5,
+      "edge": 12.0,
+      "year": 2024,
+      "round": "6"
+    },
+    {
+      "date": "2024-04-24",
+      "player": "Trent Rivers",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.79,
+      "actual": 24.0,
+      "won": true,
+      "profit": 39.5,
+      "bankroll": 872.0,
+      "confidence": 0.5,
+      "edge": 5.6,
+      "year": 2024,
+      "round": "7"
+    },
+    {
+      "date": "2024-04-25",
+      "player": "Dyson Heppell",
+      "line": 19.5,
+      "direction": "OVER",
+      "odds": 1.86,
+      "actual": 27.0,
+      "won": true,
+      "profit": 43.0,
+      "bankroll": 915.0,
+      "confidence": 0.5,
+      "edge": 9.7,
+      "year": 2024,
+      "round": "7"
+    },
+    {
+      "date": "2024-04-28",
+      "player": "James Sicily",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.88,
+      "actual": 24.0,
+      "won": true,
+      "profit": 44.0,
+      "bankroll": 959.0,
+      "confidence": 0.5,
+      "edge": 19.3,
+      "year": 2024,
+      "round": "7"
+    },
+    {
+      "date": "2024-05-03",
+      "player": "Darcy Moore",
+      "line": 13.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 14.0,
+      "won": true,
+      "profit": 43.5,
+      "bankroll": 1002.5,
+      "confidence": 0.5,
+      "edge": 8.6,
+      "year": 2024,
+      "round": "8"
+    },
+    {
+      "date": "2024-05-04",
+      "player": "Brady Hough",
+      "line": 14.5,
+      "direction": "OVER",
+      "odds": 1.91,
+      "actual": 15.0,
+      "won": true,
+      "profit": 45.5,
+      "bankroll": 1048.0,
+      "confidence": 0.5,
+      "edge": 9.4,
+      "year": 2024,
+      "round": "8"
+    },
+    {
+      "date": "2024-05-05",
+      "player": "Conor Nash",
+      "line": 21.5,
+      "direction": "OVER",
+      "odds": 1.88,
+      "actual": 18.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 998.0,
+      "confidence": 0.5,
+      "edge": 7.0,
+      "year": 2024,
+      "round": "8"
+    },
+    {
+      "date": "2024-05-05",
+      "player": "James Sicily",
+      "line": 21.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 20.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 948.0,
+      "confidence": 0.5,
+      "edge": 7.9,
+      "year": 2024,
+      "round": "8"
+    },
+    {
+      "date": "2024-05-05",
+      "player": "Wil Powell",
+      "line": 17.5,
+      "direction": "OVER",
+      "odds": 1.89,
+      "actual": 21.0,
+      "won": true,
+      "profit": 44.5,
+      "bankroll": 992.5,
+      "confidence": 0.5,
+      "edge": 15.4,
+      "year": 2024,
+      "round": "8"
+    },
+    {
+      "date": "2024-05-10",
+      "player": "Caleb Serong",
+      "line": 30.5,
+      "direction": "OVER",
+      "odds": 1.93,
+      "actual": 34.0,
+      "won": true,
+      "profit": 46.5,
+      "bankroll": 1039.0,
+      "confidence": 0.5,
+      "edge": 3.8,
+      "year": 2024,
+      "round": "9"
+    },
+    {
+      "date": "2024-05-11",
+      "player": "Dyson Heppell",
+      "line": 19.5,
+      "direction": "OVER",
+      "odds": 1.84,
+      "actual": 17.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 989.0,
+      "confidence": 0.5,
+      "edge": 8.4,
+      "year": 2024,
+      "round": "9"
+    },
+    {
+      "date": "2024-05-18",
+      "player": "Caleb Serong",
+      "line": 30.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 30.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 939.0,
+      "confidence": 0.5,
+      "edge": 6.0,
+      "year": 2024,
+      "round": "10"
+    },
+    {
+      "date": "2024-05-18",
+      "player": "Marcus Windhager",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.82,
+      "actual": 17.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 889.0,
+      "confidence": 0.5,
+      "edge": 6.0,
+      "year": 2024,
+      "round": "10"
+    },
+    {
+      "date": "2024-05-30",
+      "player": "Nic Newman",
+      "line": 21.5,
+      "direction": "OVER",
+      "odds": 1.88,
+      "actual": 29.0,
+      "won": true,
+      "profit": 44.0,
+      "bankroll": 933.0,
+      "confidence": 0.5,
+      "edge": 14.7,
+      "year": 2024,
+      "round": "12"
+    },
+    {
+      "date": "2024-06-01",
+      "player": "Marcus Windhager",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.91,
+      "actual": 19.0,
+      "won": true,
+      "profit": 45.5,
+      "bankroll": 978.5,
+      "confidence": 0.5,
+      "edge": 8.8,
+      "year": 2024,
+      "round": "12"
+    },
+    {
+      "date": "2024-06-06",
+      "player": "Nick Vlastuin",
+      "line": 17.5,
+      "direction": "OVER",
+      "odds": 1.85,
+      "actual": 14.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 928.5,
+      "confidence": 0.5,
+      "edge": 8.2,
+      "year": 2024,
+      "round": "13"
+    },
+    {
+      "date": "2024-06-06",
+      "player": "Thomson Dow",
+      "line": 15.5,
+      "direction": "OVER",
+      "odds": 1.86,
+      "actual": 19.0,
+      "won": true,
+      "profit": 43.0,
+      "bankroll": 971.5,
+      "confidence": 0.5,
+      "edge": 8.4,
+      "year": 2024,
+      "round": "13"
+    },
+    {
+      "date": "2024-06-09",
+      "player": "Nic Newman",
+      "line": 22.5,
+      "direction": "OVER",
+      "odds": 1.86,
+      "actual": 21.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 921.5,
+      "confidence": 0.5,
+      "edge": 7.9,
+      "year": 2024,
+      "round": "13"
+    },
+    {
+      "date": "2024-06-16",
+      "player": "Lachie Whitfield",
+      "line": 27.5,
+      "direction": "OVER",
+      "odds": 1.89,
+      "actual": 28.0,
+      "won": true,
+      "profit": 44.5,
+      "bankroll": 966.0,
+      "confidence": 0.5,
+      "edge": 5.5,
+      "year": 2024,
+      "round": "14"
+    },
+    {
+      "date": "2024-06-22",
+      "player": "Connor Idun",
+      "line": 16.5,
+      "direction": "OVER",
+      "odds": 1.85,
+      "actual": 20.0,
+      "won": true,
+      "profit": 42.5,
+      "bankroll": 1008.5,
+      "confidence": 0.5,
+      "edge": 11.9,
+      "year": 2024,
+      "round": "15"
+    },
+    {
+      "date": "2024-06-23",
+      "player": "Wil Powell",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.88,
+      "actual": 22.0,
+      "won": true,
+      "profit": 44.0,
+      "bankroll": 1052.5,
+      "confidence": 0.5,
+      "edge": 10.3,
+      "year": 2024,
+      "round": "15"
+    },
+    {
+      "date": "2024-06-29",
+      "player": "Lachie Whitfield",
+      "line": 27.5,
+      "direction": "OVER",
+      "odds": 1.94,
+      "actual": 41.0,
+      "won": true,
+      "profit": 47.0,
+      "bankroll": 1099.5,
+      "confidence": 0.5,
+      "edge": 4.5,
+      "year": 2024,
+      "round": "16"
+    },
+    {
+      "date": "2024-07-14",
+      "player": "Darcy Wilmot",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 21.0,
+      "won": true,
+      "profit": 43.5,
+      "bankroll": 1143.0,
+      "confidence": 0.5,
+      "edge": 7.4,
+      "year": 2024,
+      "round": "18"
+    },
+    {
+      "date": "2024-08-24",
+      "player": "Matt Crouch",
+      "line": 28.5,
+      "direction": "OVER",
+      "odds": 1.88,
+      "actual": 28.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1093.0,
+      "confidence": 0.5,
+      "edge": 5.7,
+      "year": 2024,
+      "round": "24"
+    },
+    {
+      "date": "2024-08-25",
+      "player": "Luke Ryan",
+      "line": 23.5,
+      "direction": "OVER",
+      "odds": 1.89,
+      "actual": 21.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1043.0,
+      "confidence": 0.5,
+      "edge": 5.8,
+      "year": 2024,
+      "round": "24"
+    },
+    {
+      "date": "2025-03-09",
+      "player": "Lachie Whitfield",
+      "line": 29.5,
+      "direction": "OVER",
+      "odds": 1.85,
+      "actual": 26.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 993.0,
+      "confidence": 0.5,
+      "edge": 6.4,
+      "year": 2025,
+      "round": "0"
+    },
+    {
+      "date": "2025-03-15",
+      "player": "Darcy Wilmot",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.85,
+      "actual": 25.0,
+      "won": true,
+      "profit": 42.5,
+      "bankroll": 1035.5,
+      "confidence": 0.5,
+      "edge": 10.3,
+      "year": 2025,
+      "round": "1"
+    },
+    {
+      "date": "2025-03-16",
+      "player": "Lachie Whitfield",
+      "line": 29.5,
+      "direction": "OVER",
+      "odds": 1.88,
+      "actual": 34.0,
+      "won": true,
+      "profit": 44.0,
+      "bankroll": 1079.5,
+      "confidence": 0.5,
+      "edge": 8.2,
+      "year": 2025,
+      "round": "1"
+    },
+    {
+      "date": "2025-03-16",
+      "player": "Matt Crouch",
+      "line": 28.5,
+      "direction": "OVER",
+      "odds": 1.86,
+      "actual": 31.0,
+      "won": true,
+      "profit": 43.0,
+      "bankroll": 1122.5,
+      "confidence": 0.5,
+      "edge": 5.0,
+      "year": 2025,
+      "round": "1"
+    },
+    {
+      "date": "2025-03-23",
+      "player": "Luke Ryan",
+      "line": 21.5,
+      "direction": "OVER",
+      "odds": 1.82,
+      "actual": 23.0,
+      "won": true,
+      "profit": 41.0,
+      "bankroll": 1163.5,
+      "confidence": 0.5,
+      "edge": 7.6,
+      "year": 2025,
+      "round": "2"
+    },
+    {
+      "date": "2025-03-29",
+      "player": "Lachie Whitfield",
+      "line": 30.5,
+      "direction": "OVER",
+      "odds": 1.96,
+      "actual": 34.0,
+      "won": true,
+      "profit": 48.0,
+      "bankroll": 1211.5,
+      "confidence": 0.5,
+      "edge": 5.4,
+      "year": 2025,
+      "round": "3"
+    },
+    {
+      "date": "2025-03-30",
+      "player": "Rory Laird",
+      "line": 26.5,
+      "direction": "OVER",
+      "odds": 1.85,
+      "actual": 32.0,
+      "won": true,
+      "profit": 42.5,
+      "bankroll": 1254.0,
+      "confidence": 0.5,
+      "edge": 6.4,
+      "year": 2025,
+      "round": "3"
+    },
+    {
+      "date": "2025-04-13",
+      "player": "Connor Idun",
+      "line": 17.5,
+      "direction": "OVER",
+      "odds": 1.88,
+      "actual": 18.0,
+      "won": true,
+      "profit": 44.0,
+      "bankroll": 1298.0,
+      "confidence": 0.5,
+      "edge": 12.8,
+      "year": 2025,
+      "round": "5"
+    },
+    {
+      "date": "2025-04-13",
+      "player": "Jayden Short",
+      "line": 22.5,
+      "direction": "OVER",
+      "odds": 1.88,
+      "actual": 25.0,
+      "won": true,
+      "profit": 44.0,
+      "bankroll": 1342.0,
+      "confidence": 0.5,
+      "edge": 6.1,
+      "year": 2025,
+      "round": "5"
+    },
+    {
+      "date": "2025-04-13",
+      "player": "Lachie Whitfield",
+      "line": 30.5,
+      "direction": "OVER",
+      "odds": 1.83,
+      "actual": 24.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1292.0,
+      "confidence": 0.5,
+      "edge": 6.9,
+      "year": 2025,
+      "round": "5"
+    },
+    {
+      "date": "2025-04-19",
+      "player": "Connor Idun",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.98,
+      "actual": 26.0,
+      "won": true,
+      "profit": 49.0,
+      "bankroll": 1341.0,
+      "confidence": 0.5,
+      "edge": 5.6,
+      "year": 2025,
+      "round": "6"
+    },
+    {
+      "date": "2025-04-19",
+      "player": "Lachie Whitfield",
+      "line": 30.5,
+      "direction": "OVER",
+      "odds": 1.86,
+      "actual": 39.0,
+      "won": true,
+      "profit": 43.0,
+      "bankroll": 1384.0,
+      "confidence": 0.5,
+      "edge": 5.6,
+      "year": 2025,
+      "round": "6"
+    },
+    {
+      "date": "2025-04-19",
+      "player": "Nick Vlastuin",
+      "line": 17.5,
+      "direction": "OVER",
+      "odds": 1.95,
+      "actual": 27.0,
+      "won": true,
+      "profit": 47.5,
+      "bankroll": 1431.5,
+      "confidence": 0.5,
+      "edge": 10.9,
+      "year": 2025,
+      "round": "6"
+    },
+    {
+      "date": "2025-04-19",
+      "player": "Rory Laird",
+      "line": 26.5,
+      "direction": "OVER",
+      "odds": 1.75,
+      "actual": 21.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1381.5,
+      "confidence": 0.5,
+      "edge": 4.9,
+      "year": 2025,
+      "round": "6"
+    },
+    {
+      "date": "2025-04-25",
+      "player": "Harry Perryman",
+      "line": 15.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 13.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1331.5,
+      "confidence": 0.5,
+      "edge": 12.3,
+      "year": 2025,
+      "round": "7"
+    },
+    {
+      "date": "2025-04-25",
+      "player": "Rory Laird",
+      "line": 24.5,
+      "direction": "OVER",
+      "odds": 1.89,
+      "actual": 27.0,
+      "won": true,
+      "profit": 44.5,
+      "bankroll": 1376.0,
+      "confidence": 0.5,
+      "edge": 11.6,
+      "year": 2025,
+      "round": "7"
+    },
+    {
+      "date": "2025-04-26",
+      "player": "Connor Idun",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.85,
+      "actual": 16.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1326.0,
+      "confidence": 0.5,
+      "edge": 9.2,
+      "year": 2025,
+      "round": "7"
+    },
+    {
+      "date": "2025-04-26",
+      "player": "Lachie Whitfield",
+      "line": 30.5,
+      "direction": "OVER",
+      "odds": 1.88,
+      "actual": 30.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1276.0,
+      "confidence": 0.5,
+      "edge": 8.0,
+      "year": 2025,
+      "round": "7"
+    },
+    {
+      "date": "2025-05-01",
+      "player": "Jordan Ridley",
+      "line": 19.5,
+      "direction": "OVER",
+      "odds": 1.89,
+      "actual": 9.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1226.0,
+      "confidence": 0.5,
+      "edge": 7.7,
+      "year": 2025,
+      "round": "8"
+    },
+    {
+      "date": "2025-05-02",
+      "player": "Callum Wilkie",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.9,
+      "actual": 24.0,
+      "won": true,
+      "profit": 45.0,
+      "bankroll": 1271.0,
+      "confidence": 0.5,
+      "edge": 5.6,
+      "year": 2025,
+      "round": "8"
+    },
+    {
+      "date": "2025-05-02",
+      "player": "Luke Ryan",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 24.0,
+      "won": true,
+      "profit": 43.5,
+      "bankroll": 1314.5,
+      "confidence": 0.5,
+      "edge": 5.0,
+      "year": 2025,
+      "round": "8"
+    },
+    {
+      "date": "2025-05-03",
+      "player": "Rory Laird",
+      "line": 23.5,
+      "direction": "OVER",
+      "odds": 1.8,
+      "actual": 23.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1264.5,
+      "confidence": 0.5,
+      "edge": 14.3,
+      "year": 2025,
+      "round": "8"
+    },
+    {
+      "date": "2025-05-04",
+      "player": "Lachie Whitfield",
+      "line": 28.5,
+      "direction": "OVER",
+      "odds": 1.79,
+      "actual": 28.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1214.5,
+      "confidence": 0.5,
+      "edge": 16.7,
+      "year": 2025,
+      "round": "8"
+    },
+    {
+      "date": "2025-05-11",
+      "player": "Darcy Wilmot",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.85,
+      "actual": 20.0,
+      "won": true,
+      "profit": 42.5,
+      "bankroll": 1257.0,
+      "confidence": 0.5,
+      "edge": 9.2,
+      "year": 2025,
+      "round": "9"
+    },
+    {
+      "date": "2025-05-11",
+      "player": "Lachie Whitfield",
+      "line": 30.5,
+      "direction": "OVER",
+      "odds": 1.86,
+      "actual": 30.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1207.0,
+      "confidence": 0.5,
+      "edge": 6.2,
+      "year": 2025,
+      "round": "9"
+    },
+    {
+      "date": "2025-05-17",
+      "player": "Corey Wagner",
+      "line": 15.5,
+      "direction": "OVER",
+      "odds": 1.86,
+      "actual": 13.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1157.0,
+      "confidence": 0.5,
+      "edge": 12.3,
+      "year": 2025,
+      "round": "10"
+    },
+    {
+      "date": "2025-05-17",
+      "player": "Lachie Whitfield",
+      "line": 29.5,
+      "direction": "OVER",
+      "odds": 1.79,
+      "actual": 25.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1107.0,
+      "confidence": 0.5,
+      "edge": 9.8,
+      "year": 2025,
+      "round": "10"
+    },
+    {
+      "date": "2025-05-17",
+      "player": "Rory Laird",
+      "line": 23.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 27.0,
+      "won": true,
+      "profit": 43.5,
+      "bankroll": 1150.5,
+      "confidence": 0.5,
+      "edge": 14.3,
+      "year": 2025,
+      "round": "10"
+    },
+    {
+      "date": "2025-05-18",
+      "player": "Christian Salem",
+      "line": 19.5,
+      "direction": "OVER",
+      "odds": 1.79,
+      "actual": 20.0,
+      "won": true,
+      "profit": 39.5,
+      "bankroll": 1190.0,
+      "confidence": 0.5,
+      "edge": 10.4,
+      "year": 2025,
+      "round": "10"
+    },
+    {
+      "date": "2025-05-23",
+      "player": "Nick Vlastuin",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.86,
+      "actual": 24.0,
+      "won": true,
+      "profit": 43.0,
+      "bankroll": 1233.0,
+      "confidence": 0.5,
+      "edge": 8.5,
+      "year": 2025,
+      "round": "11"
+    },
+    {
+      "date": "2025-05-24",
+      "player": "Lachie Whitfield",
+      "line": 29.5,
+      "direction": "OVER",
+      "odds": 1.79,
+      "actual": 27.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1183.0,
+      "confidence": 0.5,
+      "edge": 7.6,
+      "year": 2025,
+      "round": "11"
+    },
+    {
+      "date": "2025-05-25",
+      "player": "Christian Salem",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 31.0,
+      "won": true,
+      "profit": 43.5,
+      "bankroll": 1226.5,
+      "confidence": 0.5,
+      "edge": 7.3,
+      "year": 2025,
+      "round": "11"
+    },
+    {
+      "date": "2025-05-30",
+      "player": "Josh Daicos",
+      "line": 26.5,
+      "direction": "OVER",
+      "odds": 1.79,
+      "actual": 24.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1176.5,
+      "confidence": 0.5,
+      "edge": 4.4,
+      "year": 2025,
+      "round": "12"
+    },
+    {
+      "date": "2025-05-31",
+      "player": "Matthew Roberts",
+      "line": 23.5,
+      "direction": "OVER",
+      "odds": 1.96,
+      "actual": 21.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1126.5,
+      "confidence": 0.5,
+      "edge": 7.4,
+      "year": 2025,
+      "round": "12"
+    },
+    {
+      "date": "2025-06-01",
+      "player": "Christian Salem",
+      "line": 21.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 14.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1076.5,
+      "confidence": 0.5,
+      "edge": 4.8,
+      "year": 2025,
+      "round": "12"
+    },
+    {
+      "date": "2025-06-01",
+      "player": "Tom Cole",
+      "line": 14.5,
+      "direction": "OVER",
+      "odds": 1.85,
+      "actual": 24.0,
+      "won": true,
+      "profit": 42.5,
+      "bankroll": 1119.0,
+      "confidence": 0.5,
+      "edge": 10.8,
+      "year": 2025,
+      "round": "12"
+    },
+    {
+      "date": "2025-06-06",
+      "player": "Hugh McCluggage",
+      "line": 26.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 27.0,
+      "won": true,
+      "profit": 43.5,
+      "bankroll": 1162.5,
+      "confidence": 0.5,
+      "edge": 5.2,
+      "year": 2025,
+      "round": "13"
+    },
+    {
+      "date": "2025-06-06",
+      "player": "Rory Laird",
+      "line": 23.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 25.0,
+      "won": true,
+      "profit": 43.5,
+      "bankroll": 1206.0,
+      "confidence": 0.5,
+      "edge": 13.2,
+      "year": 2025,
+      "round": "13"
+    },
+    {
+      "date": "2025-06-07",
+      "player": "Lachie Whitfield",
+      "line": 28.5,
+      "direction": "OVER",
+      "odds": 1.86,
+      "actual": 24.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1156.0,
+      "confidence": 0.5,
+      "edge": 6.7,
+      "year": 2025,
+      "round": "13"
+    },
+    {
+      "date": "2025-06-08",
+      "player": "Andrew McGrath",
+      "line": 22.5,
+      "direction": "OVER",
+      "odds": 1.89,
+      "actual": 23.0,
+      "won": true,
+      "profit": 44.5,
+      "bankroll": 1200.5,
+      "confidence": 0.5,
+      "edge": 7.2,
+      "year": 2025,
+      "round": "13"
+    },
+    {
+      "date": "2025-06-08",
+      "player": "Tim Kelly",
+      "line": 17.5,
+      "direction": "OVER",
+      "odds": 1.79,
+      "actual": 12.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1150.5,
+      "confidence": 0.5,
+      "edge": 18.9,
+      "year": 2025,
+      "round": "13"
+    },
+    {
+      "date": "2025-06-12",
+      "player": "Callum Wilkie",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.88,
+      "actual": 21.0,
+      "won": true,
+      "profit": 44.0,
+      "bankroll": 1194.5,
+      "confidence": 0.5,
+      "edge": 7.7,
+      "year": 2025,
+      "round": "14"
+    },
+    {
+      "date": "2025-06-12",
+      "player": "Thomas Liberatore",
+      "line": 23.5,
+      "direction": "OVER",
+      "odds": 1.8,
+      "actual": 29.0,
+      "won": true,
+      "profit": 40.0,
+      "bankroll": 1234.5,
+      "confidence": 0.5,
+      "edge": 12.8,
+      "year": 2025,
+      "round": "14"
+    },
+    {
+      "date": "2025-06-13",
+      "player": "Josh Battle",
+      "line": 16.5,
+      "direction": "OVER",
+      "odds": 1.78,
+      "actual": 15.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1184.5,
+      "confidence": 0.5,
+      "edge": 9.9,
+      "year": 2025,
+      "round": "14"
+    },
+    {
+      "date": "2025-06-13",
+      "player": "Josh Worrell",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.82,
+      "actual": 17.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1134.5,
+      "confidence": 0.5,
+      "edge": 6.3,
+      "year": 2025,
+      "round": "14"
+    },
+    {
+      "date": "2025-06-13",
+      "player": "Massimo D'Ambrosio",
+      "line": 17.5,
+      "direction": "OVER",
+      "odds": 1.97,
+      "actual": 19.0,
+      "won": true,
+      "profit": 48.5,
+      "bankroll": 1183.0,
+      "confidence": 0.5,
+      "edge": 7.4,
+      "year": 2025,
+      "round": "14"
+    },
+    {
+      "date": "2025-06-13",
+      "player": "Rory Laird",
+      "line": 24.5,
+      "direction": "OVER",
+      "odds": 1.93,
+      "actual": 22.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1133.0,
+      "confidence": 0.5,
+      "edge": 7.5,
+      "year": 2025,
+      "round": "14"
+    },
+    {
+      "date": "2025-06-14",
+      "player": "Andrew McGrath",
+      "line": 22.5,
+      "direction": "OVER",
+      "odds": 1.86,
+      "actual": 19.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1083.0,
+      "confidence": 0.5,
+      "edge": 6.7,
+      "year": 2025,
+      "round": "14"
+    },
+    {
+      "date": "2025-06-14",
+      "player": "Dayne Zorko",
+      "line": 25.5,
+      "direction": "OVER",
+      "odds": 1.97,
+      "actual": 26.0,
+      "won": true,
+      "profit": 48.5,
+      "bankroll": 1131.5,
+      "confidence": 0.5,
+      "edge": 4.8,
+      "year": 2025,
+      "round": "14"
+    },
+    {
+      "date": "2025-06-14",
+      "player": "Lachie Whitfield",
+      "line": 27.5,
+      "direction": "OVER",
+      "odds": 1.93,
+      "actual": 33.0,
+      "won": true,
+      "profit": 46.5,
+      "bankroll": 1178.0,
+      "confidence": 0.5,
+      "edge": 7.4,
+      "year": 2025,
+      "round": "14"
+    },
+    {
+      "date": "2025-06-14",
+      "player": "Matt Johnson",
+      "line": 17.5,
+      "direction": "OVER",
+      "odds": 1.89,
+      "actual": 20.0,
+      "won": true,
+      "profit": 44.5,
+      "bankroll": 1222.5,
+      "confidence": 0.5,
+      "edge": 9.3,
+      "year": 2025,
+      "round": "14"
+    },
+    {
+      "date": "2025-06-14",
+      "player": "Will Ashcroft",
+      "line": 26.5,
+      "direction": "OVER",
+      "odds": 1.89,
+      "actual": 22.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1172.5,
+      "confidence": 0.5,
+      "edge": 5.4,
+      "year": 2025,
+      "round": "14"
+    },
+    {
+      "date": "2025-06-14",
+      "player": "Will Setterfield",
+      "line": 19.5,
+      "direction": "OVER",
+      "odds": 1.78,
+      "actual": 31.0,
+      "won": true,
+      "profit": 39.0,
+      "bankroll": 1211.5,
+      "confidence": 0.5,
+      "edge": 10.1,
+      "year": 2025,
+      "round": "14"
+    },
+    {
+      "date": "2025-06-15",
+      "player": "Christian Salem",
+      "line": 19.5,
+      "direction": "OVER",
+      "odds": 1.8,
+      "actual": 16.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1161.5,
+      "confidence": 0.5,
+      "edge": 16.9,
+      "year": 2025,
+      "round": "14"
+    },
+    {
+      "date": "2025-06-15",
+      "player": "Ryan Maric",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.91,
+      "actual": 17.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1111.5,
+      "confidence": 0.5,
+      "edge": 5.6,
+      "year": 2025,
+      "round": "14"
+    },
+    {
+      "date": "2025-06-15",
+      "player": "Tim Kelly",
+      "line": 16.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 10.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1061.5,
+      "confidence": 0.5,
+      "edge": 21.2,
+      "year": 2025,
+      "round": "14"
+    },
+    {
+      "date": "2025-06-19",
+      "player": "Luke Ryan",
+      "line": 19.5,
+      "direction": "OVER",
+      "odds": 1.8,
+      "actual": 32.0,
+      "won": true,
+      "profit": 40.0,
+      "bankroll": 1101.5,
+      "confidence": 0.5,
+      "edge": 9.1,
+      "year": 2025,
+      "round": "15"
+    },
+    {
+      "date": "2025-06-20",
+      "player": "Dayne Zorko",
+      "line": 25.5,
+      "direction": "OVER",
+      "odds": 1.85,
+      "actual": 33.0,
+      "won": true,
+      "profit": 42.5,
+      "bankroll": 1144.0,
+      "confidence": 0.5,
+      "edge": 5.4,
+      "year": 2025,
+      "round": "15"
+    },
+    {
+      "date": "2025-06-20",
+      "player": "Josh Dunkley",
+      "line": 22.5,
+      "direction": "OVER",
+      "odds": 1.88,
+      "actual": 30.0,
+      "won": true,
+      "profit": 44.0,
+      "bankroll": 1188.0,
+      "confidence": 0.5,
+      "edge": 6.4,
+      "year": 2025,
+      "round": "15"
+    },
+    {
+      "date": "2025-06-21",
+      "player": "Adam Saad",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.85,
+      "actual": 18.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1138.0,
+      "confidence": 0.5,
+      "edge": 6.7,
+      "year": 2025,
+      "round": "15"
+    },
+    {
+      "date": "2025-06-21",
+      "player": "Callum Wilkie",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.89,
+      "actual": 20.0,
+      "won": true,
+      "profit": 44.5,
+      "bankroll": 1182.5,
+      "confidence": 0.5,
+      "edge": 9.9,
+      "year": 2025,
+      "round": "15"
+    },
+    {
+      "date": "2025-06-21",
+      "player": "Zak Butters",
+      "line": 25.5,
+      "direction": "OVER",
+      "odds": 1.89,
+      "actual": 28.0,
+      "won": true,
+      "profit": 44.5,
+      "bankroll": 1227.0,
+      "confidence": 0.5,
+      "edge": 12.4,
+      "year": 2025,
+      "round": "15"
+    },
+    {
+      "date": "2025-06-22",
+      "player": "Lachie Whitfield",
+      "line": 28.5,
+      "direction": "OVER",
+      "odds": 1.95,
+      "actual": 4.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1177.0,
+      "confidence": 0.5,
+      "edge": 5.5,
+      "year": 2025,
+      "round": "15"
+    },
+    {
+      "date": "2025-06-22",
+      "player": "Lachlan Ash",
+      "line": 28.5,
+      "direction": "OVER",
+      "odds": 1.84,
+      "actual": 33.0,
+      "won": true,
+      "profit": 42.0,
+      "bankroll": 1219.0,
+      "confidence": 0.5,
+      "edge": 4.0,
+      "year": 2025,
+      "round": "15"
+    },
+    {
+      "date": "2025-06-22",
+      "player": "Thomas Liberatore",
+      "line": 25.5,
+      "direction": "OVER",
+      "odds": 1.79,
+      "actual": 27.0,
+      "won": true,
+      "profit": 39.5,
+      "bankroll": 1258.5,
+      "confidence": 0.5,
+      "edge": 5.0,
+      "year": 2025,
+      "round": "15"
+    },
+    {
+      "date": "2025-06-26",
+      "player": "Zak Butters",
+      "line": 26.5,
+      "direction": "OVER",
+      "odds": 1.86,
+      "actual": 30.0,
+      "won": true,
+      "profit": 43.0,
+      "bankroll": 1301.5,
+      "confidence": 0.5,
+      "edge": 6.4,
+      "year": 2025,
+      "round": "16"
+    },
+    {
+      "date": "2025-06-27",
+      "player": "Bailey Dale",
+      "line": 25.5,
+      "direction": "OVER",
+      "odds": 1.95,
+      "actual": 25.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1251.5,
+      "confidence": 0.5,
+      "edge": 11.1,
+      "year": 2025,
+      "round": "16"
+    },
+    {
+      "date": "2025-06-27",
+      "player": "Matthew Roberts",
+      "line": 22.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 13.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1201.5,
+      "confidence": 0.5,
+      "edge": 7.6,
+      "year": 2025,
+      "round": "16"
+    },
+    {
+      "date": "2025-06-27",
+      "player": "Thomas Liberatore",
+      "line": 25.5,
+      "direction": "OVER",
+      "odds": 1.79,
+      "actual": 21.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1151.5,
+      "confidence": 0.5,
+      "edge": 5.1,
+      "year": 2025,
+      "round": "16"
+    },
+    {
+      "date": "2025-06-28",
+      "player": "Caleb Daniel",
+      "line": 24.5,
+      "direction": "OVER",
+      "odds": 1.96,
+      "actual": 26.0,
+      "won": true,
+      "profit": 48.0,
+      "bankroll": 1199.5,
+      "confidence": 0.5,
+      "edge": 5.0,
+      "year": 2025,
+      "round": "16"
+    },
+    {
+      "date": "2025-06-28",
+      "player": "Christian Salem",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.94,
+      "actual": 22.0,
+      "won": true,
+      "profit": 47.0,
+      "bankroll": 1246.5,
+      "confidence": 0.5,
+      "edge": 8.3,
+      "year": 2025,
+      "round": "16"
+    },
+    {
+      "date": "2025-06-28",
+      "player": "Karl Amon",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.86,
+      "actual": 33.0,
+      "won": true,
+      "profit": 43.0,
+      "bankroll": 1289.5,
+      "confidence": 0.5,
+      "edge": 10.9,
+      "year": 2025,
+      "round": "16"
+    },
+    {
+      "date": "2025-06-28",
+      "player": "Max Gawn",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.84,
+      "actual": 14.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1239.5,
+      "confidence": 0.5,
+      "edge": 5.0,
+      "year": 2025,
+      "round": "16"
+    },
+    {
+      "date": "2025-06-28",
+      "player": "Ryan Maric",
+      "line": 16.5,
+      "direction": "OVER",
+      "odds": 1.81,
+      "actual": 21.0,
+      "won": true,
+      "profit": 40.5,
+      "bankroll": 1280.0,
+      "confidence": 0.5,
+      "edge": 20.4,
+      "year": 2025,
+      "round": "16"
+    },
+    {
+      "date": "2025-06-29",
+      "player": "Corey Wagner",
+      "line": 15.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 9.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1230.0,
+      "confidence": 0.5,
+      "edge": 7.1,
+      "year": 2025,
+      "round": "16"
+    },
+    {
+      "date": "2025-07-03",
+      "player": "Bailey Dale",
+      "line": 26.5,
+      "direction": "OVER",
+      "odds": 1.81,
+      "actual": 13.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1180.0,
+      "confidence": 0.5,
+      "edge": 7.4,
+      "year": 2025,
+      "round": "17"
+    },
+    {
+      "date": "2025-07-03",
+      "player": "Caleb Daniel",
+      "line": 24.5,
+      "direction": "OVER",
+      "odds": 1.89,
+      "actual": 25.0,
+      "won": true,
+      "profit": 44.5,
+      "bankroll": 1224.5,
+      "confidence": 0.5,
+      "edge": 5.3,
+      "year": 2025,
+      "round": "17"
+    },
+    {
+      "date": "2025-07-04",
+      "player": "Ryan Maric",
+      "line": 17.5,
+      "direction": "OVER",
+      "odds": 1.9,
+      "actual": 20.0,
+      "won": true,
+      "profit": 45.0,
+      "bankroll": 1269.5,
+      "confidence": 0.5,
+      "edge": 15.4,
+      "year": 2025,
+      "round": "17"
+    },
+    {
+      "date": "2025-07-05",
+      "player": "Andrew McGrath",
+      "line": 21.5,
+      "direction": "OVER",
+      "odds": 1.99,
+      "actual": 12.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1219.5,
+      "confidence": 0.5,
+      "edge": 8.7,
+      "year": 2025,
+      "round": "17"
+    },
+    {
+      "date": "2025-07-05",
+      "player": "Archie Roberts",
+      "line": 22.5,
+      "direction": "OVER",
+      "odds": 1.8,
+      "actual": 20.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1169.5,
+      "confidence": 0.5,
+      "edge": 6.4,
+      "year": 2025,
+      "round": "17"
+    },
+    {
+      "date": "2025-07-05",
+      "player": "Dayne Zorko",
+      "line": 24.5,
+      "direction": "OVER",
+      "odds": 1.81,
+      "actual": 23.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1119.5,
+      "confidence": 0.5,
+      "edge": 11.6,
+      "year": 2025,
+      "round": "17"
+    },
+    {
+      "date": "2025-07-05",
+      "player": "Jacob Hopper",
+      "line": 23.5,
+      "direction": "OVER",
+      "odds": 1.78,
+      "actual": 27.0,
+      "won": true,
+      "profit": 39.0,
+      "bankroll": 1158.5,
+      "confidence": 0.5,
+      "edge": 7.2,
+      "year": 2025,
+      "round": "17"
+    },
+    {
+      "date": "2025-07-05",
+      "player": "Josh Dunkley",
+      "line": 22.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 17.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1108.5,
+      "confidence": 0.5,
+      "edge": 7.3,
+      "year": 2025,
+      "round": "17"
+    },
+    {
+      "date": "2025-07-05",
+      "player": "Marcus Windhager",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.83,
+      "actual": 27.0,
+      "won": true,
+      "profit": 41.5,
+      "bankroll": 1150.0,
+      "confidence": 0.5,
+      "edge": 5.6,
+      "year": 2025,
+      "round": "17"
+    },
+    {
+      "date": "2025-07-05",
+      "player": "Will Ashcroft",
+      "line": 25.5,
+      "direction": "OVER",
+      "odds": 1.88,
+      "actual": 23.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1100.0,
+      "confidence": 0.5,
+      "edge": 8.2,
+      "year": 2025,
+      "round": "17"
+    },
+    {
+      "date": "2025-07-06",
+      "player": "Christian Salem",
+      "line": 19.5,
+      "direction": "OVER",
+      "odds": 2.04,
+      "actual": 23.0,
+      "won": true,
+      "profit": 52.0,
+      "bankroll": 1152.0,
+      "confidence": 0.5,
+      "edge": 12.5,
+      "year": 2025,
+      "round": "17"
+    },
+    {
+      "date": "2025-07-06",
+      "player": "Matt Johnson",
+      "line": 17.5,
+      "direction": "OVER",
+      "odds": 1.93,
+      "actual": 20.0,
+      "won": true,
+      "profit": 46.5,
+      "bankroll": 1198.5,
+      "confidence": 0.5,
+      "edge": 8.6,
+      "year": 2025,
+      "round": "17"
+    },
+    {
+      "date": "2025-07-06",
+      "player": "Max Gawn",
+      "line": 19.5,
+      "direction": "OVER",
+      "odds": 1.83,
+      "actual": 16.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1148.5,
+      "confidence": 0.5,
+      "edge": 9.7,
+      "year": 2025,
+      "round": "17"
+    },
+    {
+      "date": "2025-07-06",
+      "player": "Trent Rivers",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.81,
+      "actual": 23.0,
+      "won": true,
+      "profit": 40.5,
+      "bankroll": 1189.0,
+      "confidence": 0.5,
+      "edge": 5.0,
+      "year": 2025,
+      "round": "17"
+    },
+    {
+      "date": "2025-07-10",
+      "player": "Dayne Zorko",
+      "line": 23.5,
+      "direction": "OVER",
+      "odds": 1.93,
+      "actual": 28.0,
+      "won": true,
+      "profit": 46.5,
+      "bankroll": 1235.5,
+      "confidence": 0.5,
+      "edge": 14.9,
+      "year": 2025,
+      "round": "18"
+    },
+    {
+      "date": "2025-07-12",
+      "player": "Josh Ward",
+      "line": 19.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 17.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1185.5,
+      "confidence": 0.5,
+      "edge": 8.4,
+      "year": 2025,
+      "round": "18"
+    },
+    {
+      "date": "2025-07-12",
+      "player": "Karl Amon",
+      "line": 22.5,
+      "direction": "OVER",
+      "odds": 1.85,
+      "actual": 30.0,
+      "won": true,
+      "profit": 42.5,
+      "bankroll": 1228.0,
+      "confidence": 0.5,
+      "edge": 5.2,
+      "year": 2025,
+      "round": "18"
+    },
+    {
+      "date": "2025-07-12",
+      "player": "Lachlan Ash",
+      "line": 28.5,
+      "direction": "OVER",
+      "odds": 1.84,
+      "actual": 27.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1178.0,
+      "confidence": 0.5,
+      "edge": 4.7,
+      "year": 2025,
+      "round": "18"
+    },
+    {
+      "date": "2025-07-13",
+      "player": "Callum Wilkie",
+      "line": 17.5,
+      "direction": "OVER",
+      "odds": 1.89,
+      "actual": 23.0,
+      "won": true,
+      "profit": 44.5,
+      "bankroll": 1222.5,
+      "confidence": 0.5,
+      "edge": 9.7,
+      "year": 2025,
+      "round": "18"
+    },
+    {
+      "date": "2025-07-13",
+      "player": "Jase Burgoyne",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.85,
+      "actual": 9.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1172.5,
+      "confidence": 0.5,
+      "edge": 11.0,
+      "year": 2025,
+      "round": "18"
+    },
+    {
+      "date": "2025-07-13",
+      "player": "Ryan Maric",
+      "line": 17.5,
+      "direction": "OVER",
+      "odds": 1.85,
+      "actual": 16.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1122.5,
+      "confidence": 0.5,
+      "edge": 19.2,
+      "year": 2025,
+      "round": "18"
+    },
+    {
+      "date": "2025-07-17",
+      "player": "Lachlan Ash",
+      "line": 28.5,
+      "direction": "OVER",
+      "odds": 1.82,
+      "actual": 27.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1072.5,
+      "confidence": 0.5,
+      "edge": 4.0,
+      "year": 2025,
+      "round": "19"
+    },
+    {
+      "date": "2025-07-18",
+      "player": "Bailey Dale",
+      "line": 24.5,
+      "direction": "OVER",
+      "odds": 1.79,
+      "actual": 33.0,
+      "won": true,
+      "profit": 39.5,
+      "bankroll": 1112.0,
+      "confidence": 0.5,
+      "edge": 10.2,
+      "year": 2025,
+      "round": "19"
+    },
+    {
+      "date": "2025-07-18",
+      "player": "Dayne Zorko",
+      "line": 25.5,
+      "direction": "OVER",
+      "odds": 1.8,
+      "actual": 25.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1062.0,
+      "confidence": 0.5,
+      "edge": 6.9,
+      "year": 2025,
+      "round": "19"
+    },
+    {
+      "date": "2025-07-19",
+      "player": "Adam Cerra",
+      "line": 23.5,
+      "direction": "OVER",
+      "odds": 1.75,
+      "actual": 20.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1012.0,
+      "confidence": 0.5,
+      "edge": 7.8,
+      "year": 2025,
+      "round": "19"
+    },
+    {
+      "date": "2025-07-19",
+      "player": "Caleb Daniel",
+      "line": 24.5,
+      "direction": "OVER",
+      "odds": 1.93,
+      "actual": 27.0,
+      "won": true,
+      "profit": 46.5,
+      "bankroll": 1058.5,
+      "confidence": 0.5,
+      "edge": 5.9,
+      "year": 2025,
+      "round": "19"
+    },
+    {
+      "date": "2025-07-19",
+      "player": "Christian Salem",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.92,
+      "actual": 25.0,
+      "won": true,
+      "profit": 46.0,
+      "bankroll": 1104.5,
+      "confidence": 0.5,
+      "edge": 6.0,
+      "year": 2025,
+      "round": "19"
+    },
+    {
+      "date": "2025-07-19",
+      "player": "George Hewett",
+      "line": 26.5,
+      "direction": "OVER",
+      "odds": 1.82,
+      "actual": 19.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1054.5,
+      "confidence": 0.5,
+      "edge": 5.4,
+      "year": 2025,
+      "round": "19"
+    },
+    {
+      "date": "2025-07-19",
+      "player": "Jake Bowey",
+      "line": 21.5,
+      "direction": "OVER",
+      "odds": 1.83,
+      "actual": 26.0,
+      "won": true,
+      "profit": 41.5,
+      "bankroll": 1096.0,
+      "confidence": 0.5,
+      "edge": 7.6,
+      "year": 2025,
+      "round": "19"
+    },
+    {
+      "date": "2025-07-19",
+      "player": "Jase Burgoyne",
+      "line": 17.5,
+      "direction": "OVER",
+      "odds": 1.85,
+      "actual": 26.0,
+      "won": true,
+      "profit": 42.5,
+      "bankroll": 1138.5,
+      "confidence": 0.5,
+      "edge": 13.1,
+      "year": 2025,
+      "round": "19"
+    },
+    {
+      "date": "2025-07-19",
+      "player": "Ryan Maric",
+      "line": 17.5,
+      "direction": "OVER",
+      "odds": 1.85,
+      "actual": 17.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1088.5,
+      "confidence": 0.5,
+      "edge": 21.9,
+      "year": 2025,
+      "round": "19"
+    },
+    {
+      "date": "2025-07-20",
+      "player": "John Noble",
+      "line": 23.5,
+      "direction": "OVER",
+      "odds": 1.76,
+      "actual": 20.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1038.5,
+      "confidence": 0.5,
+      "edge": 10.1,
+      "year": 2025,
+      "round": "19"
+    },
+    {
+      "date": "2025-07-20",
+      "player": "Marcus Windhager",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.85,
+      "actual": 22.0,
+      "won": true,
+      "profit": 42.5,
+      "bankroll": 1081.0,
+      "confidence": 0.5,
+      "edge": 6.0,
+      "year": 2025,
+      "round": "19"
+    },
+    {
+      "date": "2025-07-24",
+      "player": "Adam Cerra",
+      "line": 23.5,
+      "direction": "OVER",
+      "odds": 1.86,
+      "actual": 19.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1031.0,
+      "confidence": 0.5,
+      "edge": 5.5,
+      "year": 2025,
+      "round": "20"
+    },
+    {
+      "date": "2025-07-24",
+      "player": "George Hewett",
+      "line": 24.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 25.0,
+      "won": true,
+      "profit": 43.5,
+      "bankroll": 1074.5,
+      "confidence": 0.5,
+      "edge": 11.6,
+      "year": 2025,
+      "round": "20"
+    },
+    {
+      "date": "2025-07-24",
+      "player": "Josh Ward",
+      "line": 19.5,
+      "direction": "OVER",
+      "odds": 1.95,
+      "actual": 22.0,
+      "won": true,
+      "profit": 47.5,
+      "bankroll": 1122.0,
+      "confidence": 0.5,
+      "edge": 7.4,
+      "year": 2025,
+      "round": "20"
+    },
+    {
+      "date": "2025-07-25",
+      "player": "Andrew McGrath",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.88,
+      "actual": 22.0,
+      "won": true,
+      "profit": 44.0,
+      "bankroll": 1166.0,
+      "confidence": 0.5,
+      "edge": 8.4,
+      "year": 2025,
+      "round": "20"
+    },
+    {
+      "date": "2025-07-25",
+      "player": "Archie Roberts",
+      "line": 22.5,
+      "direction": "OVER",
+      "odds": 1.85,
+      "actual": 26.0,
+      "won": true,
+      "profit": 42.5,
+      "bankroll": 1208.5,
+      "confidence": 0.5,
+      "edge": 7.0,
+      "year": 2025,
+      "round": "20"
+    },
+    {
+      "date": "2025-07-25",
+      "player": "Bailey Williams",
+      "line": 17.5,
+      "direction": "OVER",
+      "odds": 1.91,
+      "actual": 26.0,
+      "won": true,
+      "profit": 45.5,
+      "bankroll": 1254.0,
+      "confidence": 0.5,
+      "edge": 11.6,
+      "year": 2025,
+      "round": "20"
+    },
+    {
+      "date": "2025-07-25",
+      "player": "Connor Idun",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.88,
+      "actual": 17.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1204.0,
+      "confidence": 0.5,
+      "edge": 6.3,
+      "year": 2025,
+      "round": "20"
+    },
+    {
+      "date": "2025-07-25",
+      "player": "Finn Callaghan",
+      "line": 26.5,
+      "direction": "OVER",
+      "odds": 1.94,
+      "actual": 21.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1154.0,
+      "confidence": 0.5,
+      "edge": 8.9,
+      "year": 2025,
+      "round": "20"
+    },
+    {
+      "date": "2025-07-25",
+      "player": "Lachie Whitfield",
+      "line": 25.5,
+      "direction": "OVER",
+      "odds": 1.96,
+      "actual": 27.0,
+      "won": true,
+      "profit": 48.0,
+      "bankroll": 1202.0,
+      "confidence": 0.5,
+      "edge": 10.1,
+      "year": 2025,
+      "round": "20"
+    },
+    {
+      "date": "2025-07-26",
+      "player": "Dayne Zorko",
+      "line": 25.5,
+      "direction": "OVER",
+      "odds": 1.82,
+      "actual": 17.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1152.0,
+      "confidence": 0.5,
+      "edge": 6.1,
+      "year": 2025,
+      "round": "20"
+    },
+    {
+      "date": "2025-07-26",
+      "player": "John Noble",
+      "line": 23.5,
+      "direction": "OVER",
+      "odds": 1.86,
+      "actual": 31.0,
+      "won": true,
+      "profit": 43.0,
+      "bankroll": 1195.0,
+      "confidence": 0.5,
+      "edge": 10.4,
+      "year": 2025,
+      "round": "20"
+    },
+    {
+      "date": "2025-07-26",
+      "player": "Ryan Maric",
+      "line": 16.5,
+      "direction": "OVER",
+      "odds": 1.82,
+      "actual": 21.0,
+      "won": true,
+      "profit": 41.0,
+      "bankroll": 1236.0,
+      "confidence": 0.5,
+      "edge": 25.7,
+      "year": 2025,
+      "round": "20"
+    },
+    {
+      "date": "2025-07-27",
+      "player": "Clayton Oliver",
+      "line": 23.5,
+      "direction": "OVER",
+      "odds": 1.83,
+      "actual": 23.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1186.0,
+      "confidence": 0.5,
+      "edge": 6.4,
+      "year": 2025,
+      "round": "20"
+    },
+    {
+      "date": "2025-07-27",
+      "player": "Jake Bowey",
+      "line": 21.5,
+      "direction": "OVER",
+      "odds": 1.94,
+      "actual": 13.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1136.0,
+      "confidence": 0.5,
+      "edge": 9.8,
+      "year": 2025,
+      "round": "20"
+    },
+    {
+      "date": "2025-07-27",
+      "player": "Max Gawn",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.89,
+      "actual": 17.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1086.0,
+      "confidence": 0.5,
+      "edge": 12.4,
+      "year": 2025,
+      "round": "20"
+    },
+    {
+      "date": "2025-07-27",
+      "player": "Sam Banks",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.94,
+      "actual": 19.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1036.0,
+      "confidence": 0.5,
+      "edge": 5.0,
+      "year": 2025,
+      "round": "20"
+    },
+    {
+      "date": "2025-07-31",
+      "player": "Bailey Dale",
+      "line": 24.5,
+      "direction": "OVER",
+      "odds": 1.86,
+      "actual": 22.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 986.0,
+      "confidence": 0.5,
+      "edge": 10.7,
+      "year": 2025,
+      "round": "21"
+    },
+    {
+      "date": "2025-07-31",
+      "player": "Connor Idun",
+      "line": 17.5,
+      "direction": "OVER",
+      "odds": 1.84,
+      "actual": 23.0,
+      "won": true,
+      "profit": 42.0,
+      "bankroll": 1028.0,
+      "confidence": 0.5,
+      "edge": 10.5,
+      "year": 2025,
+      "round": "21"
+    },
+    {
+      "date": "2025-07-31",
+      "player": "Lachlan Ash",
+      "line": 27.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 36.0,
+      "won": true,
+      "profit": 43.5,
+      "bankroll": 1071.5,
+      "confidence": 0.5,
+      "edge": 4.2,
+      "year": 2025,
+      "round": "21"
+    },
+    {
+      "date": "2025-07-31",
+      "player": "Thomas Liberatore",
+      "line": 24.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 26.0,
+      "won": true,
+      "profit": 43.5,
+      "bankroll": 1115.0,
+      "confidence": 0.5,
+      "edge": 5.3,
+      "year": 2025,
+      "round": "21"
+    },
+    {
+      "date": "2025-08-01",
+      "player": "Wayne Milera",
+      "line": 16.5,
+      "direction": "OVER",
+      "odds": 1.88,
+      "actual": 19.0,
+      "won": true,
+      "profit": 44.0,
+      "bankroll": 1159.0,
+      "confidence": 0.5,
+      "edge": 6.7,
+      "year": 2025,
+      "round": "21"
+    },
+    {
+      "date": "2025-08-02",
+      "player": "Andrew McGrath",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.89,
+      "actual": 26.0,
+      "won": true,
+      "profit": 44.5,
+      "bankroll": 1203.5,
+      "confidence": 0.5,
+      "edge": 8.3,
+      "year": 2025,
+      "round": "21"
+    },
+    {
+      "date": "2025-08-02",
+      "player": "Dayne Zorko",
+      "line": 24.5,
+      "direction": "OVER",
+      "odds": 1.82,
+      "actual": 19.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1153.5,
+      "confidence": 0.5,
+      "edge": 7.5,
+      "year": 2025,
+      "round": "21"
+    },
+    {
+      "date": "2025-08-02",
+      "player": "Jake Bowey",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 25.0,
+      "won": true,
+      "profit": 43.5,
+      "bankroll": 1197.0,
+      "confidence": 0.5,
+      "edge": 12.2,
+      "year": 2025,
+      "round": "21"
+    },
+    {
+      "date": "2025-08-02",
+      "player": "Jaspa Fletcher",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.85,
+      "actual": 22.0,
+      "won": true,
+      "profit": 42.5,
+      "bankroll": 1239.5,
+      "confidence": 0.5,
+      "edge": 5.4,
+      "year": 2025,
+      "round": "21"
+    },
+    {
+      "date": "2025-08-02",
+      "player": "Sam Banks",
+      "line": 19.5,
+      "direction": "OVER",
+      "odds": 1.81,
+      "actual": 26.0,
+      "won": true,
+      "profit": 40.5,
+      "bankroll": 1280.0,
+      "confidence": 0.5,
+      "edge": 14.2,
+      "year": 2025,
+      "round": "21"
+    },
+    {
+      "date": "2025-08-02",
+      "player": "Toby Nankervis",
+      "line": 13.5,
+      "direction": "OVER",
+      "odds": 1.8,
+      "actual": 11.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1230.0,
+      "confidence": 0.5,
+      "edge": 18.0,
+      "year": 2025,
+      "round": "21"
+    },
+    {
+      "date": "2025-08-02",
+      "player": "Zachary Merrett",
+      "line": 26.5,
+      "direction": "OVER",
+      "odds": 1.97,
+      "actual": 19.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1180.0,
+      "confidence": 0.5,
+      "edge": 4.9,
+      "year": 2025,
+      "round": "21"
+    },
+    {
+      "date": "2025-08-03",
+      "player": "George Hewett",
+      "line": 24.5,
+      "direction": "OVER",
+      "odds": 1.83,
+      "actual": 36.0,
+      "won": true,
+      "profit": 41.5,
+      "bankroll": 1221.5,
+      "confidence": 0.5,
+      "edge": 11.0,
+      "year": 2025,
+      "round": "21"
+    },
+    {
+      "date": "2025-08-03",
+      "player": "Jack Steele",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.81,
+      "actual": 8.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1171.5,
+      "confidence": 0.5,
+      "edge": 6.3,
+      "year": 2025,
+      "round": "21"
+    },
+    {
+      "date": "2025-08-03",
+      "player": "Jase Burgoyne",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.85,
+      "actual": 14.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1121.5,
+      "confidence": 0.5,
+      "edge": 10.6,
+      "year": 2025,
+      "round": "21"
+    },
+    {
+      "date": "2025-08-03",
+      "player": "Zak Butters",
+      "line": 26.5,
+      "direction": "OVER",
+      "odds": 1.88,
+      "actual": 10.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1071.5,
+      "confidence": 0.5,
+      "edge": 7.9,
+      "year": 2025,
+      "round": "21"
+    },
+    {
+      "date": "2025-08-08",
+      "player": "Dylan Shiel",
+      "line": 19.5,
+      "direction": "OVER",
+      "odds": 1.76,
+      "actual": 23.0,
+      "won": true,
+      "profit": 38.0,
+      "bankroll": 1109.5,
+      "confidence": 0.5,
+      "edge": 5.3,
+      "year": 2025,
+      "round": "22"
+    },
+    {
+      "date": "2025-08-08",
+      "player": "Zachary Merrett",
+      "line": 25.5,
+      "direction": "OVER",
+      "odds": 1.91,
+      "actual": 27.0,
+      "won": true,
+      "profit": 45.5,
+      "bankroll": 1155.0,
+      "confidence": 0.5,
+      "edge": 4.3,
+      "year": 2025,
+      "round": "22"
+    },
+    {
+      "date": "2025-08-09",
+      "player": "Bradley Hill",
+      "line": 19.5,
+      "direction": "OVER",
+      "odds": 1.84,
+      "actual": 24.0,
+      "won": true,
+      "profit": 42.0,
+      "bankroll": 1197.0,
+      "confidence": 0.5,
+      "edge": 6.0,
+      "year": 2025,
+      "round": "22"
+    },
+    {
+      "date": "2025-08-09",
+      "player": "Dayne Zorko",
+      "line": 23.5,
+      "direction": "OVER",
+      "odds": 1.86,
+      "actual": 28.0,
+      "won": true,
+      "profit": 43.0,
+      "bankroll": 1240.0,
+      "confidence": 0.5,
+      "edge": 10.9,
+      "year": 2025,
+      "round": "22"
+    },
+    {
+      "date": "2025-08-10",
+      "player": "Bailey Dale",
+      "line": 25.5,
+      "direction": "OVER",
+      "odds": 1.82,
+      "actual": 30.0,
+      "won": true,
+      "profit": 41.0,
+      "bankroll": 1281.0,
+      "confidence": 0.5,
+      "edge": 6.7,
+      "year": 2025,
+      "round": "22"
+    },
+    {
+      "date": "2025-08-10",
+      "player": "Bailey Williams",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.82,
+      "actual": 20.0,
+      "won": true,
+      "profit": 41.0,
+      "bankroll": 1322.0,
+      "confidence": 0.5,
+      "edge": 8.8,
+      "year": 2025,
+      "round": "22"
+    },
+    {
+      "date": "2025-08-10",
+      "player": "Connor Idun",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.8,
+      "actual": 17.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1272.0,
+      "confidence": 0.5,
+      "edge": 6.3,
+      "year": 2025,
+      "round": "22"
+    },
+    {
+      "date": "2025-08-10",
+      "player": "Jake Bowey",
+      "line": 21.5,
+      "direction": "OVER",
+      "odds": 1.88,
+      "actual": 21.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1222.0,
+      "confidence": 0.5,
+      "edge": 6.7,
+      "year": 2025,
+      "round": "22"
+    },
+    {
+      "date": "2025-08-10",
+      "player": "Max Gawn",
+      "line": 19.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 23.0,
+      "won": true,
+      "profit": 43.5,
+      "bankroll": 1265.5,
+      "confidence": 0.5,
+      "edge": 10.8,
+      "year": 2025,
+      "round": "22"
+    },
+    {
+      "date": "2025-08-10",
+      "player": "Rory Laird",
+      "line": 22.5,
+      "direction": "OVER",
+      "odds": 1.88,
+      "actual": 25.0,
+      "won": true,
+      "profit": 44.0,
+      "bankroll": 1309.5,
+      "confidence": 0.5,
+      "edge": 9.9,
+      "year": 2025,
+      "round": "22"
+    },
+    {
+      "date": "2025-08-10",
+      "player": "Thomas Liberatore",
+      "line": 24.5,
+      "direction": "OVER",
+      "odds": 1.77,
+      "actual": 24.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1259.5,
+      "confidence": 0.5,
+      "edge": 5.9,
+      "year": 2025,
+      "round": "22"
+    },
+    {
+      "date": "2025-08-15",
+      "player": "Dayne Zorko",
+      "line": 23.5,
+      "direction": "OVER",
+      "odds": 1.84,
+      "actual": 27.0,
+      "won": true,
+      "profit": 42.0,
+      "bankroll": 1301.5,
+      "confidence": 0.5,
+      "edge": 13.2,
+      "year": 2025,
+      "round": "23"
+    },
+    {
+      "date": "2025-08-15",
+      "player": "Luke Ryan",
+      "line": 19.5,
+      "direction": "OVER",
+      "odds": 1.88,
+      "actual": 18.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1251.5,
+      "confidence": 0.5,
+      "edge": 9.7,
+      "year": 2025,
+      "round": "23"
+    },
+    {
+      "date": "2025-08-16",
+      "player": "Jake Bowey",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.92,
+      "actual": 27.0,
+      "won": true,
+      "profit": 46.0,
+      "bankroll": 1297.5,
+      "confidence": 0.5,
+      "edge": 11.2,
+      "year": 2025,
+      "round": "23"
+    },
+    {
+      "date": "2025-08-16",
+      "player": "Josh Daicos",
+      "line": 27.5,
+      "direction": "OVER",
+      "odds": 1.84,
+      "actual": 19.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1247.5,
+      "confidence": 0.5,
+      "edge": 3.8,
+      "year": 2025,
+      "round": "23"
+    },
+    {
+      "date": "2025-08-16",
+      "player": "Scott Pendlebury",
+      "line": 22.5,
+      "direction": "OVER",
+      "odds": 1.76,
+      "actual": 24.0,
+      "won": true,
+      "profit": 38.0,
+      "bankroll": 1285.5,
+      "confidence": 0.5,
+      "edge": 7.3,
+      "year": 2025,
+      "round": "23"
+    },
+    {
+      "date": "2025-08-16",
+      "player": "Zak Butters",
+      "line": 25.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 29.0,
+      "won": true,
+      "profit": 43.5,
+      "bankroll": 1329.0,
+      "confidence": 0.5,
+      "edge": 4.1,
+      "year": 2025,
+      "round": "23"
+    },
+    {
+      "date": "2025-08-17",
+      "player": "Dion Prestia",
+      "line": 22.5,
+      "direction": "OVER",
+      "odds": 1.8,
+      "actual": 14.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1279.0,
+      "confidence": 0.5,
+      "edge": 5.5,
+      "year": 2025,
+      "round": "23"
+    },
+    {
+      "date": "2025-08-17",
+      "player": "Tom Atkins",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.88,
+      "actual": 21.0,
+      "won": true,
+      "profit": 44.0,
+      "bankroll": 1323.0,
+      "confidence": 0.5,
+      "edge": 5.6,
+      "year": 2025,
+      "round": "23"
+    },
+    {
+      "date": "2025-08-22",
+      "player": "Jake Bowey",
+      "line": 21.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 24.0,
+      "won": true,
+      "profit": 43.5,
+      "bankroll": 1366.5,
+      "confidence": 0.5,
+      "edge": 5.4,
+      "year": 2025,
+      "round": "24"
+    },
+    {
+      "date": "2025-08-22",
+      "player": "John Noble",
+      "line": 23.5,
+      "direction": "OVER",
+      "odds": 1.8,
+      "actual": 27.0,
+      "won": true,
+      "profit": 40.0,
+      "bankroll": 1406.5,
+      "confidence": 0.5,
+      "edge": 7.2,
+      "year": 2025,
+      "round": "24"
+    },
+    {
+      "date": "2025-08-23",
+      "player": "Dion Prestia",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.83,
+      "actual": 29.0,
+      "won": true,
+      "profit": 41.5,
+      "bankroll": 1448.0,
+      "confidence": 0.5,
+      "edge": 13.8,
+      "year": 2025,
+      "round": "24"
+    },
+    {
+      "date": "2025-08-23",
+      "player": "Tom Powell",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.89,
+      "actual": 16.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1398.0,
+      "confidence": 0.5,
+      "edge": 12.5,
+      "year": 2025,
+      "round": "24"
+    },
+    {
+      "date": "2025-08-24",
+      "player": "Bradley Hill",
+      "line": 19.5,
+      "direction": "OVER",
+      "odds": 1.84,
+      "actual": 16.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1348.0,
+      "confidence": 0.5,
+      "edge": 8.4,
+      "year": 2025,
+      "round": "24"
+    },
+    {
+      "date": "2025-08-24",
+      "player": "Connor Idun",
+      "line": 17.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 14.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1298.0,
+      "confidence": 0.5,
+      "edge": 8.2,
+      "year": 2025,
+      "round": "24"
+    },
+    {
+      "date": "2025-08-24",
+      "player": "Dayne Zorko",
+      "line": 24.5,
+      "direction": "OVER",
+      "odds": 1.94,
+      "actual": 22.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1248.0,
+      "confidence": 0.5,
+      "edge": 6.7,
+      "year": 2025,
+      "round": "24"
+    },
+    {
+      "date": "2025-08-24",
+      "player": "Luke Ryan",
+      "line": 19.5,
+      "direction": "OVER",
+      "odds": 1.86,
+      "actual": 20.0,
+      "won": true,
+      "profit": 43.0,
+      "bankroll": 1291.0,
+      "confidence": 0.5,
+      "edge": 8.0,
+      "year": 2025,
+      "round": "24"
+    },
+    {
+      "date": "2025-08-27",
+      "player": "Joel Jeffrey",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.91,
+      "actual": 20.0,
+      "won": true,
+      "profit": 45.5,
+      "bankroll": 1336.5,
+      "confidence": 0.5,
+      "edge": 6.7,
+      "year": 2025,
+      "round": "24"
+    },
+    {
+      "date": "2025-09-04",
+      "player": "Josh Daicos",
+      "line": 23.5,
+      "direction": "OVER",
+      "odds": 1.81,
+      "actual": 24.0,
+      "won": true,
+      "profit": 40.5,
+      "bankroll": 1377.0,
+      "confidence": 0.5,
+      "edge": 12.9,
+      "year": 2025,
+      "round": "QF"
+    },
+    {
+      "date": "2025-09-04",
+      "player": "Josh Worrell",
+      "line": 19.5,
+      "direction": "OVER",
+      "odds": 1.83,
+      "actual": 26.0,
+      "won": true,
+      "profit": 41.5,
+      "bankroll": 1418.5,
+      "confidence": 0.5,
+      "edge": 6.7,
+      "year": 2025,
+      "round": "QF"
+    },
+    {
+      "date": "2025-09-04",
+      "player": "Ned Long",
+      "line": 16.5,
+      "direction": "OVER",
+      "odds": 1.75,
+      "actual": 23.0,
+      "won": true,
+      "profit": 37.5,
+      "bankroll": 1456.0,
+      "confidence": 0.5,
+      "edge": 8.3,
+      "year": 2025,
+      "round": "QF"
+    },
+    {
+      "date": "2025-09-04",
+      "player": "Scott Pendlebury",
+      "line": 22.5,
+      "direction": "OVER",
+      "odds": 1.81,
+      "actual": 23.0,
+      "won": true,
+      "profit": 40.5,
+      "bankroll": 1496.5,
+      "confidence": 0.5,
+      "edge": 5.2,
+      "year": 2025,
+      "round": "QF"
+    },
+    {
+      "date": "2025-09-04",
+      "player": "Wayne Milera",
+      "line": 17.5,
+      "direction": "OVER",
+      "odds": 1.77,
+      "actual": 11.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1446.5,
+      "confidence": 0.5,
+      "edge": 6.3,
+      "year": 2025,
+      "round": "QF"
+    },
+    {
+      "date": "2025-09-05",
+      "player": "Bailey Smith",
+      "line": 29.5,
+      "direction": "OVER",
+      "odds": 1.86,
+      "actual": 22.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1396.5,
+      "confidence": 0.5,
+      "edge": 9.6,
+      "year": 2025,
+      "round": "QF"
+    },
+    {
+      "date": "2025-09-05",
+      "player": "Dayne Zorko",
+      "line": 24.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 35.0,
+      "won": true,
+      "profit": 43.5,
+      "bankroll": 1440.0,
+      "confidence": 0.5,
+      "edge": 6.4,
+      "year": 2025,
+      "round": "QF"
+    },
+    {
+      "date": "2025-09-05",
+      "player": "Jaspa Fletcher",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.85,
+      "actual": 20.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1390.0,
+      "confidence": 0.5,
+      "edge": 9.6,
+      "year": 2025,
+      "round": "QF"
+    },
+    {
+      "date": "2025-09-05",
+      "player": "Lawson Humphries",
+      "line": 13.5,
+      "direction": "OVER",
+      "odds": 1.91,
+      "actual": 13.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1340.0,
+      "confidence": 0.5,
+      "edge": 7.7,
+      "year": 2025,
+      "round": "QF"
+    },
+    {
+      "date": "2025-09-06",
+      "player": "Andrew Brayshaw",
+      "line": 24.5,
+      "direction": "OVER",
+      "odds": 1.76,
+      "actual": 32.0,
+      "won": true,
+      "profit": 38.0,
+      "bankroll": 1378.0,
+      "confidence": 0.5,
+      "edge": 6.9,
+      "year": 2025,
+      "round": "QF"
+    },
+    {
+      "date": "2025-09-06",
+      "player": "Connor Idun",
+      "line": 16.5,
+      "direction": "OVER",
+      "odds": 1.83,
+      "actual": 9.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1328.0,
+      "confidence": 0.5,
+      "edge": 11.5,
+      "year": 2025,
+      "round": "QF"
+    },
+    {
+      "date": "2025-09-06",
+      "player": "Finn Callaghan",
+      "line": 26.5,
+      "direction": "OVER",
+      "odds": 1.79,
+      "actual": 34.0,
+      "won": true,
+      "profit": 39.5,
+      "bankroll": 1367.5,
+      "confidence": 0.5,
+      "edge": 7.7,
+      "year": 2025,
+      "round": "QF"
+    },
+    {
+      "date": "2025-09-06",
+      "player": "Jarman Impey",
+      "line": 20.5,
+      "direction": "OVER",
+      "odds": 1.74,
+      "actual": 28.0,
+      "won": true,
+      "profit": 37.0,
+      "bankroll": 1404.5,
+      "confidence": 0.5,
+      "edge": 9.6,
+      "year": 2025,
+      "round": "QF"
+    },
+    {
+      "date": "2025-09-06",
+      "player": "Joel Jeffrey",
+      "line": 16.5,
+      "direction": "OVER",
+      "odds": 1.89,
+      "actual": 19.0,
+      "won": true,
+      "profit": 44.5,
+      "bankroll": 1449.0,
+      "confidence": 0.5,
+      "edge": 20.8,
+      "year": 2025,
+      "round": "QF"
+    },
+    {
+      "date": "2025-09-06",
+      "player": "John Noble",
+      "line": 23.5,
+      "direction": "OVER",
+      "odds": 1.88,
+      "actual": 20.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1399.0,
+      "confidence": 0.5,
+      "edge": 10.1,
+      "year": 2025,
+      "round": "QF"
+    },
+    {
+      "date": "2025-09-06",
+      "player": "Josh Battle",
+      "line": 16.5,
+      "direction": "OVER",
+      "odds": 1.98,
+      "actual": 19.0,
+      "won": true,
+      "profit": 49.0,
+      "bankroll": 1448.0,
+      "confidence": 0.5,
+      "edge": 7.1,
+      "year": 2025,
+      "round": "QF"
+    },
+    {
+      "date": "2025-09-06",
+      "player": "Josh Ward",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.83,
+      "actual": 19.0,
+      "won": true,
+      "profit": 41.5,
+      "bankroll": 1489.5,
+      "confidence": 0.5,
+      "edge": 12.4,
+      "year": 2025,
+      "round": "QF"
+    },
+    {
+      "date": "2025-09-06",
+      "player": "Karl Amon",
+      "line": 21.5,
+      "direction": "OVER",
+      "odds": 1.77,
+      "actual": 23.0,
+      "won": true,
+      "profit": 38.5,
+      "bankroll": 1528.0,
+      "confidence": 0.5,
+      "edge": 13.5,
+      "year": 2025,
+      "round": "QF"
+    },
+    {
+      "date": "2025-09-06",
+      "player": "Lachlan Ash",
+      "line": 26.5,
+      "direction": "OVER",
+      "odds": 1.86,
+      "actual": 28.0,
+      "won": true,
+      "profit": 43.0,
+      "bankroll": 1571.0,
+      "confidence": 0.5,
+      "edge": 4.4,
+      "year": 2025,
+      "round": "QF"
+    },
+    {
+      "date": "2025-09-06",
+      "player": "Luke Ryan",
+      "line": 18.5,
+      "direction": "OVER",
+      "odds": 1.81,
+      "actual": 23.0,
+      "won": true,
+      "profit": 40.5,
+      "bankroll": 1611.5,
+      "confidence": 0.5,
+      "edge": 12.4,
+      "year": 2025,
+      "round": "QF"
+    },
+    {
+      "date": "2025-09-06",
+      "player": "Massimo D'Ambrosio",
+      "line": 17.5,
+      "direction": "OVER",
+      "odds": 1.79,
+      "actual": 16.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1561.5,
+      "confidence": 0.5,
+      "edge": 8.2,
+      "year": 2025,
+      "round": "QF"
+    },
+    {
+      "date": "2025-09-06",
+      "player": "Sam Taylor",
+      "line": 12.5,
+      "direction": "OVER",
+      "odds": 1.83,
+      "actual": 8.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1511.5,
+      "confidence": 0.5,
+      "edge": 13.1,
+      "year": 2025,
+      "round": "QF"
+    }
+  ],
+  "generated": "2026-03-08T14:53:05.500690"
+}

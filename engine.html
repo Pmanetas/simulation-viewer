@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B&S AFL1.0 — AXIOM</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Mono', 'Fira Code', monospace;
+    background: #0a0a0f;
+    color: #e0e0e0;
+    min-height: 100vh;
+}
+
+.header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #1a1a2e;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: linear-gradient(180deg, #0f0f1a 0%, #0a0a0f 100%);
+}
+.header h1 { font-size: 20px; font-weight: 700; color: #fff; letter-spacing: -0.5px; }
+.header .version { font-size: 11px; color: #666; background: #1a1a2e; padding: 2px 8px; border-radius: 4px; }
+.header .note { font-size: 12px; color: #7c86a3; }
+.header .back-link { margin-left: auto; color: #666; text-decoration: none; font-size: 13px; }
+.header .back-link:hover { color: #aaa; }
+
+.container { max-width: 1400px; margin: 0 auto; padding: 20px 24px; }
+
+.summary-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+}
+.summary-card {
+    background: #12121e;
+    border: 1px solid #1a1a2e;
+    border-radius: 8px;
+    padding: 14px 16px;
+    text-align: center;
+}
+.summary-card .label { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 0.5px; }
+.summary-card .value { font-size: 22px; font-weight: 700; margin-top: 4px; }
+.green { color: #34d399; }
+.red { color: #f87171; }
+.yellow { color: #fbbf24; }
+
+.rules-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+.rules-table th {
+    text-align: left; padding: 10px 12px; font-size: 11px; color: #666;
+    text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #1a1a2e;
+    position: sticky; top: 0; background: #0a0a0f; z-index: 1;
+}
+.rules-table td { padding: 10px 12px; font-size: 13px; border-bottom: 1px solid #0f0f1a; }
+.rules-table tr { cursor: pointer; transition: background 0.15s; }
+.rules-table tr:hover { background: #1a1a2e; }
+.rules-table tr.selected { background: #1a1a30; border-left: 3px solid #6366f1; }
+.rules-table .rule-id { font-weight: 700; color: #6366f1; font-family: 'SF Mono', monospace; }
+.rules-table .category { font-size: 11px; padding: 2px 6px; border-radius: 3px; background: #1a1a2e; color: #888; }
+
+.detail-panel {
+    background: #12121e; border: 1px solid #1a1a2e; border-radius: 8px;
+    padding: 20px; margin-bottom: 24px; display: none;
+}
+.detail-panel.active { display: block; }
+.detail-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.detail-header h2 { font-size: 18px; font-weight: 700; }
+.detail-header .rule-badge { font-size: 12px; padding: 3px 8px; border-radius: 4px; background: #6366f1; color: #fff; font-weight: 600; }
+.detail-description { color: #888; font-size: 13px; margin-bottom: 16px; line-height: 1.5; }
+
+.detail-stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px; margin-bottom: 20px;
+}
+.detail-stat { background: #0a0a0f; padding: 10px 12px; border-radius: 6px; }
+.detail-stat .label { font-size: 10px; color: #666; text-transform: uppercase; }
+.detail-stat .value { font-size: 16px; font-weight: 600; margin-top: 2px; }
+
+.params-grid { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.param-chip { font-size: 11px; padding: 3px 8px; border-radius: 4px; background: #1a1a2e; color: #aaa; font-family: 'SF Mono', monospace; }
+
+/* Round-by-round grid */
+.rounds-section { margin-bottom: 20px; }
+.rounds-section h3 { font-size: 14px; color: #fff; margin-bottom: 10px; }
+.year-section { margin-bottom: 16px; }
+.year-label { font-size: 13px; font-weight: 700; color: #6366f1; margin-bottom: 6px; }
+.rounds-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 4px;
+}
+.round-cell {
+    background: #0a0a0f;
+    border-radius: 4px;
+    padding: 6px 4px;
+    text-align: center;
+    font-size: 11px;
+    border: 1px solid #1a1a2e;
+}
+.round-cell .rnd { color: #666; font-size: 10px; }
+.round-cell .wpct { font-weight: 700; font-size: 13px; margin-top: 2px; }
+.round-cell .bets { color: #555; font-size: 10px; }
+.round-cell.hot { border-color: #34d399; background: #0a1a0f; }
+.round-cell.cold { border-color: #f87171; background: #1a0a0a; }
+.round-cell.neutral { border-color: #333; }
+
+.chart-container { height: 200px; margin-bottom: 20px; }
+
+.bet-history { max-height: 400px; overflow-y: auto; border: 1px solid #1a1a2e; border-radius: 6px; }
+.bet-history table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.bet-history th {
+    position: sticky; top: 0; background: #12121e; padding: 8px 10px;
+    text-align: left; font-size: 10px; color: #666; text-transform: uppercase; border-bottom: 1px solid #1a1a2e;
+}
+.bet-history td { padding: 6px 10px; border-bottom: 1px solid #0f0f1a; }
+.bet-history tr.win { color: #34d399; }
+.bet-history tr.loss { color: #f87171; }
+
+.loading { text-align: center; padding: 40px; color: #666; font-size: 14px; }
+
+/* Mode toggle */
+.mode-toggle { display:flex; gap:0; margin-left:16px; border:1px solid #1a1a2e; border-radius:6px; overflow:hidden; }
+.mode-btn { padding:4px 14px; font-size:11px; font-weight:600; background:#0a0a0f; color:#666; border:none; cursor:pointer; transition: all 0.15s; }
+.mode-btn:hover { color:#aaa; }
+.mode-btn.active { background:#6366f1; color:#fff; }
+.mode-btn[data-mode="live"].active { background:#34d399; color:#0a0a0f; }
+.live-banner { background:#0a2a1a; border:1px solid #34d399; border-radius:6px; padding:10px 16px; margin-bottom:16px; color:#34d399; font-size:12px; display:none; }
+.live-banner.active { display:block; }
+.live-signals-col { color: #34d399; font-weight: 600; }
+
+@media (max-width: 768px) {
+    .container { padding: 12px 16px; }
+    .rules-table { font-size: 12px; }
+    .rules-table th, .rules-table td { padding: 8px 6px; }
+    .rounds-grid { grid-template-columns: repeat(auto-fill, minmax(55px, 1fr)); }
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>B&S AFL1.0</h1>
+        <span class="version">AXIOM</span>
+        <span class="note">Seventy three rules and principles, served from a static snapshot</span>
+        <div class="mode-toggle">
+            <button class="mode-btn active" data-mode="backtest" onclick="switchMode('backtest')">BACKTEST</button>
+            <button class="mode-btn" data-mode="live" onclick="switchMode('live')">LIVE</button>
+        </div>
+        <a href="./index.html" class="back-link">VORTEX</a>
+        <a href="./engine.html" class="back-link" style="margin-left:8px">AXIOM</a>
+    </div>
+
+    <div class="container">
+        <div class="live-banner" id="liveBanner">
+            LIVE MODE — Outcomes pending. Performance metrics hidden. Data as of: <span id="liveTimestamp">—</span>
+        </div>
+        <div id="loading" class="loading">Loading AXIOM data...</div>
+        <div id="summaryRow" class="summary-row" style="display:none;"></div>
+
+        <table id="rulesTable" class="rules-table" style="display:none;">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Rule</th>
+                    <th>Cat</th>
+                    <th>Bets</th>
+                    <th>Win%</th>
+                    <th>'23 B</th>
+                    <th>'23 W%</th>
+                    <th>'24 B</th>
+                    <th>'24 W%</th>
+                    <th>'25 B</th>
+                    <th>'25 W%</th>
+                </tr>
+            </thead>
+            <tbody id="rulesBody"></tbody>
+        </table>
+
+        <div id="detailPanel" class="detail-panel">
+            <div class="detail-header">
+                <span id="detailBadge" class="rule-badge"></span>
+                <h2 id="detailName"></h2>
+            </div>
+            <p id="detailDesc" class="detail-description"></p>
+            <div id="detailParams" class="params-grid"></div>
+            <div id="detailStats" class="detail-stats"></div>
+
+            <div id="roundsSection" class="rounds-section">
+                <h3>Round-by-Round</h3>
+                <div id="roundsContent"></div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="winChart"></canvas>
+            </div>
+
+            <div class="bet-history">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Rnd</th>
+                            <th>Player</th>
+                            <th>Line</th>
+                            <th>Dir</th>
+                            <th>Actual</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody id="betHistoryBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+let summaryData = null;
+let rulesData = {};
+let winChart = null;
+let currentMode = 'backtest';
+let liveRulesData = null;
+const DATA_PATHS = {
+    summary: './data/summary.json',
+    liveSignals: './data/live/signals.json',
+    ruleDetail: (ruleId) => `./data/rules/${ruleId}.json`,
+};
+
+async function loadJson(path) {
+    const resp = await fetch(path);
+    if (!resp.ok) {
+        throw new Error(`Failed to load ${path}`);
+    }
+    return resp.json();
+}
+
+async function loadLiveRulesData() {
+    const [summary, signalsData] = await Promise.all([
+        loadJson(DATA_PATHS.summary),
+        loadJson(DATA_PATHS.liveSignals),
+    ]);
+
+    const backtestPriors = (summary.rules || []).map(r => ({
+        rule_id: r.rule_id,
+        rule_name: r.rule_name,
+        category: r.category || '',
+        total_bets: r.total_bets || 0,
+        wins: r.wins || 0,
+        win_pct: r.win_pct || 0,
+        roi: r.roi || 0,
+        yearly: r.yearly || {},
+    }));
+
+    const ruleSignals = {};
+    (signalsData.signals || []).forEach(sig => {
+        const rid = sig.rule_id || '';
+        if (!rid) return;
+        if (!ruleSignals[rid]) {
+            ruleSignals[rid] = { rule_id: rid, signals_count: 0, players: [] };
+        }
+        ruleSignals[rid].signals_count += 1;
+        if (sig.player && !ruleSignals[rid].players.includes(sig.player)) {
+            ruleSignals[rid].players.push(sig.player);
+        }
+    });
+
+    return {
+        summary,
+        backtest_priors: backtestPriors,
+        live_activity: Object.values(ruleSignals),
+        _meta: {
+            mode: 'live',
+            schema_version: 1,
+            generated_at: signalsData.data_timestamp || signalsData.generated_at || '—',
+        },
+    };
+}
+
+function switchMode(mode) {
+    currentMode = mode;
+    document.querySelectorAll('.mode-btn').forEach(b =>
+        b.classList.toggle('active', b.dataset.mode === mode));
+    document.getElementById('liveBanner').classList.toggle('active', mode === 'live');
+    init();
+}
+
+async function init() {
+    if (currentMode === 'live') {
+        await initLive();
+    } else {
+        await initBacktest();
+    }
+}
+
+async function initLive() {
+    const loading = document.getElementById('loading');
+    loading.style.display = 'block';
+    loading.textContent = 'Loading LIVE data...';
+    document.getElementById('summaryRow').style.display = 'none';
+    document.getElementById('rulesTable').style.display = 'none';
+    document.getElementById('detailPanel').classList.remove('active');
+
+    try {
+        liveRulesData = await loadLiveRulesData();
+        summaryData = liveRulesData.summary;
+
+        if (liveRulesData.error) {
+            loading.textContent = liveRulesData.error + (liveRulesData.hint ? ' — ' + liveRulesData.hint : '');
+            return;
+        }
+
+        loading.style.display = 'none';
+
+        // Build live activity map
+        const activityMap = {};
+        (liveRulesData.live_activity || []).forEach(a => {
+            activityMap[a.rule_id] = a;
+        });
+
+        // Update timestamp
+        const ts = liveRulesData._meta?.generated_at || '—';
+        document.getElementById('liveTimestamp').textContent = ts;
+
+        // Summary cards for live
+        const totalSignals = (liveRulesData.live_activity || []).reduce((s, a) => s + a.signals_count, 0);
+        const activeRules = (liveRulesData.live_activity || []).length;
+        const totalPriors = (liveRulesData.backtest_priors || []).length;
+
+        document.getElementById('summaryRow').innerHTML = [
+            { label: 'Mode', value: 'LIVE', cls: 'green' },
+            { label: 'Total Rules', value: totalPriors },
+            { label: 'Active Rules', value: activeRules, cls: 'green' },
+            { label: 'Total Signals', value: totalSignals, cls: 'green' },
+        ].map(c => `<div class="summary-card"><div class="label">${c.label}</div><div class="value ${c.cls || ''}">${c.value}</div></div>`).join('');
+        document.getElementById('summaryRow').style.display = 'grid';
+
+        // Render table with live signals column
+        renderLiveTable(activityMap);
+
+    } catch(e) {
+        loading.textContent = 'Failed to load live data: ' + e.message;
+        console.error(e);
+    }
+}
+
+function renderLiveTable(activityMap) {
+    const rules = summaryData.rules.sort((a, b) => {
+        const aCount = activityMap[a.rule_id]?.signals_count || 0;
+        const bCount = activityMap[b.rule_id]?.signals_count || 0;
+        if (bCount !== aCount) return bCount - aCount;
+        return b.win_pct - a.win_pct;
+    });
+
+    const thead = document.querySelector('#rulesTable thead tr');
+    thead.innerHTML = `
+        <th>ID</th><th>Rule</th><th>Cat</th><th>Bets</th><th>Win%</th>
+        <th>'23 W%</th><th>'24 W%</th><th>'25 W%</th>
+        <th>Live Signals</th>
+    `;
+
+    const tbody = document.getElementById('rulesBody');
+    tbody.innerHTML = rules.map(r => {
+        const y23 = r.yearly?.['2023'] || {bets:0, win_pct:0};
+        const y24 = r.yearly?.['2024'] || {bets:0, win_pct:0};
+        const y25 = r.yearly?.['2025'] || {bets:0, win_pct:0};
+        const activity = activityMap[r.rule_id];
+        const sigCount = activity ? activity.signals_count : 0;
+        return `
+        <tr onclick="selectRule('${r.rule_id}')" id="row-${r.rule_id}">
+            <td class="rule-id">${r.rule_id}</td>
+            <td>${r.rule_name}</td>
+            <td><span class="category">${r.category}</span></td>
+            <td>${r.total_bets}</td>
+            <td class="${wpClass(r.win_pct)}">${r.win_pct.toFixed(1)}%</td>
+            <td class="${wpClass(y23.win_pct)}">${y23.bets ? y23.win_pct.toFixed(1)+'%' : '-'}</td>
+            <td class="${wpClass(y24.win_pct)}">${y24.bets ? y24.win_pct.toFixed(1)+'%' : '-'}</td>
+            <td class="${wpClass(y25.win_pct)}">${y25.bets ? y25.win_pct.toFixed(1)+'%' : '-'}</td>
+            <td class="live-signals-col">${sigCount > 0 ? sigCount : '—'}</td>
+        </tr>`;
+    }).join('');
+
+    document.getElementById('rulesTable').style.display = 'table';
+}
+
+async function initBacktest() {
+    const loading = document.getElementById('loading');
+    loading.style.display = 'block';
+    loading.textContent = 'Loading AXIOM data...';
+    document.getElementById('summaryRow').style.display = 'none';
+    document.getElementById('rulesTable').style.display = 'none';
+    document.getElementById('detailPanel').classList.remove('active');
+
+    try {
+        summaryData = await loadJson(DATA_PATHS.summary);
+        loading.style.display = 'none';
+
+        // Restore backtest table header
+        const thead = document.querySelector('#rulesTable thead tr');
+        thead.innerHTML = `
+            <th>ID</th><th>Rule</th><th>Cat</th><th>Bets</th><th>Win%</th>
+            <th>'23 B</th><th>'23 W%</th><th>'24 B</th><th>'24 W%</th><th>'25 B</th><th>'25 W%</th>
+        `;
+
+        renderSummary();
+        renderTable();
+    } catch (e) {
+        loading.textContent = 'Failed to load engine data.';
+        console.error(e);
+    }
+}
+
+function renderSummary() {
+    const rules = summaryData.rules;
+    const totalBets = rules.reduce((s, r) => s + r.total_bets, 0);
+    const totalWins = rules.reduce((s, r) => s + r.wins, 0);
+    const above55 = rules.filter(r => r.win_pct >= 55 && r.total_bets >= 50).length;
+    const best = rules.reduce((a, b) => a.win_pct > b.win_pct ? a : b);
+
+    const cards = [
+        { label: 'Rules', value: rules.length, cls: '' },
+        { label: 'Total Bets', value: totalBets.toLocaleString(), cls: '' },
+        { label: '55%+ Rules', value: above55, cls: above55 > 0 ? 'green' : 'red' },
+        { label: 'Best Rule', value: best.rule_id, cls: 'green' },
+        { label: 'Best Win%', value: best.win_pct.toFixed(1) + '%', cls: 'green' },
+    ];
+
+    const row = document.getElementById('summaryRow');
+    row.innerHTML = cards.map(c =>
+        `<div class="summary-card"><div class="label">${c.label}</div><div class="value ${c.cls}">${c.value}</div></div>`
+    ).join('');
+    row.style.display = 'grid';
+}
+
+function wpClass(wp) { return wp >= 55 ? 'green' : wp < 50 ? 'red' : ''; }
+
+function renderTable() {
+    const rules = summaryData.rules.sort((a, b) => b.win_pct - a.win_pct);
+    const tbody = document.getElementById('rulesBody');
+
+    tbody.innerHTML = rules.map(r => {
+        const y23 = r.yearly?.['2023'] || {bets:0, win_pct:0};
+        const y24 = r.yearly?.['2024'] || {bets:0, win_pct:0};
+        const y25 = r.yearly?.['2025'] || {bets:0, win_pct:0};
+        return `
+        <tr onclick="selectRule('${r.rule_id}')" id="row-${r.rule_id}">
+            <td class="rule-id">${r.rule_id}</td>
+            <td>${r.rule_name}</td>
+            <td><span class="category">${r.category}</span></td>
+            <td>${r.total_bets}</td>
+            <td class="${wpClass(r.win_pct)}">${r.win_pct.toFixed(1)}%</td>
+            <td>${y23.bets}</td>
+            <td class="${wpClass(y23.win_pct)}">${y23.bets ? y23.win_pct.toFixed(1)+'%' : '-'}</td>
+            <td>${y24.bets}</td>
+            <td class="${wpClass(y24.win_pct)}">${y24.bets ? y24.win_pct.toFixed(1)+'%' : '-'}</td>
+            <td>${y25.bets}</td>
+            <td class="${wpClass(y25.win_pct)}">${y25.bets ? y25.win_pct.toFixed(1)+'%' : '-'}</td>
+        </tr>`;
+    }).join('');
+
+    document.getElementById('rulesTable').style.display = 'table';
+}
+
+async function selectRule(ruleId) {
+    document.querySelectorAll('.rules-table tr').forEach(tr => tr.classList.remove('selected'));
+    document.getElementById('row-' + ruleId)?.classList.add('selected');
+
+    if (!rulesData[ruleId]) {
+        rulesData[ruleId] = await loadJson(DATA_PATHS.ruleDetail(ruleId));
+    }
+
+    const data = rulesData[ruleId];
+    const panel = document.getElementById('detailPanel');
+
+    document.getElementById('detailBadge').textContent = data.rule_id;
+    document.getElementById('detailName').textContent = data.rule_name;
+    document.getElementById('detailDesc').textContent = data.description;
+
+    document.getElementById('detailParams').innerHTML = Object.entries(data.params).map(([k, v]) =>
+        `<span class="param-chip">${k}: ${v}</span>`
+    ).join('');
+
+    const s = data.summary;
+    const statsHtml = [
+        { label: 'Total Bets', value: s.total_bets },
+        { label: 'Wins', value: s.wins },
+        { label: 'Win%', value: s.win_pct.toFixed(1) + '%' },
+    ];
+    document.getElementById('detailStats').innerHTML = statsHtml.map(st =>
+        `<div class="detail-stat"><div class="label">${st.label}</div><div class="value">${st.value}</div></div>`
+    ).join('');
+
+    // Round-by-round breakdown
+    renderRounds(data.rounds || {});
+
+    // Win% per round chart
+    renderWinChart(data.rounds || {});
+
+    // Bet history (no bankroll columns)
+    const betBody = document.getElementById('betHistoryBody');
+    betBody.innerHTML = data.bets.slice().reverse().map(b =>
+        `<tr class="${b.won ? 'win' : 'loss'}">
+            <td>${b.date}</td>
+            <td>${b.round || '?'}</td>
+            <td>${b.player}</td>
+            <td>${b.line}</td>
+            <td>${b.direction}</td>
+            <td>${b.actual}</td>
+            <td>${b.won ? 'W' : 'L'}</td>
+        </tr>`
+    ).join('');
+
+    panel.classList.add('active');
+    panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function renderRounds(rounds) {
+    const content = document.getElementById('roundsContent');
+    if (!rounds || Object.keys(rounds).length === 0) {
+        content.innerHTML = '<p style="color:#666">No round data available. Re-run backtest.</p>';
+        return;
+    }
+
+    let html = '';
+    for (const year of Object.keys(rounds).sort()) {
+        const yearRounds = rounds[year];
+        // Sort rounds numerically (treat non-numeric like finals as 99)
+        const sortedRounds = Object.keys(yearRounds).sort((a, b) => {
+            const na = parseInt(a) || 99;
+            const nb = parseInt(b) || 99;
+            return na - nb;
+        });
+
+        html += `<div class="year-section">`;
+        html += `<div class="year-label">${year}</div>`;
+        html += `<div class="rounds-grid">`;
+        for (const rnd of sortedRounds) {
+            const rd = yearRounds[rnd];
+            const cls = rd.win_pct >= 60 ? 'hot' : rd.win_pct < 45 ? 'cold' : 'neutral';
+            html += `<div class="round-cell ${cls}">
+                <div class="rnd">R${rnd}</div>
+                <div class="wpct ${wpClass(rd.win_pct)}">${rd.win_pct.toFixed(0)}%</div>
+                <div class="bets">${rd.wins}/${rd.bets}</div>
+            </div>`;
+        }
+        html += `</div></div>`;
+    }
+    content.innerHTML = html;
+}
+
+function renderWinChart(rounds) {
+    const ctx = document.getElementById('winChart').getContext('2d');
+    if (winChart) winChart.destroy();
+
+    // Build datasets per year
+    const datasets = [];
+    const colors = { '2023': '#6366f1', '2024': '#f59e0b', '2025': '#34d399' };
+
+    for (const year of Object.keys(rounds).sort()) {
+        const yearRounds = rounds[year];
+        const sortedRounds = Object.keys(yearRounds).sort((a, b) => (parseInt(a)||99) - (parseInt(b)||99));
+        datasets.push({
+            label: year,
+            data: sortedRounds.map(r => ({ x: parseInt(r) || 25, y: yearRounds[r].win_pct })),
+            borderColor: colors[year] || '#888',
+            backgroundColor: 'transparent',
+            borderWidth: 2,
+            pointRadius: 3,
+            tension: 0.3,
+        });
+    }
+
+    // 50% baseline
+    datasets.push({
+        label: '50%',
+        data: Array.from({length: 25}, (_, i) => ({ x: i + 1, y: 50 })),
+        borderColor: '#333',
+        borderDash: [5, 5],
+        borderWidth: 1,
+        pointRadius: 0,
+    });
+
+    winChart = new Chart(ctx, {
+        type: 'line',
+        data: { datasets },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { labels: { color: '#888', font: { size: 11 } } },
+            },
+            scales: {
+                x: {
+                    type: 'linear',
+                    title: { display: true, text: 'Round', color: '#666' },
+                    ticks: { color: '#444', stepSize: 1 },
+                    grid: { color: '#111' },
+                    min: 1, max: 25,
+                },
+                y: {
+                    title: { display: true, text: 'Win %', color: '#666' },
+                    ticks: { color: '#444', callback: v => v + '%' },
+                    grid: { color: '#111' },
+                    min: 0, max: 100,
+                },
+            },
+        },
+    });
+}
+
+init();
+    </script>
+</body>
+</html>

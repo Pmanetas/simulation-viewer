@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-03-10T04:45:56Z",
+  "data_timestamp": "2026-03-10T04:26:41Z",
+  "mode": "live",
+  "rules_version": "73",
+  "total_picks": 0,
+  "picks": [],
+  "_meta": {
+    "status": "no_sportsbet_odds",
+    "reason": "Mock odds detected but ALLOW_MOCK_ODDS is not true",
+    "odds_source": "mock_data",
+    "odds_provider": "other",
+    "odds_mode": "mock"
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "rule_id": "P053",
+  "rule_name": "Big Edge OVER",
+  "category": "market",
+  "description": "Player's 10-game avg is 5+ above line \u2014 big market mispricing, bet OVER",
+  "params": {
+    "margin": 5.0,
+    "min_games": 10
+  },
+  "summary": {
+    "total_bets": 5,
+    "wins": 0,
+    "win_pct": 0.0,
+    "start_bank": 1000,
+    "final_bank": 750,
+    "total_profit": -250,
+    "roi": -100.0,
+    "max_drawdown_pct": 25.0,
+    "max_losing_streak": 5,
+    "stake": 50
+  },
+  "yearly": {
+    "2025": {
+      "bets": 5,
+      "wins": 0,
+      "profit": -250,
+      "win_pct": 0.0,
+      "roi": -100.0
+    }
+  },
+  "rounds": {
+    "2025": {
+      "1": {
+        "bets": 1,
+        "wins": 0,
+        "win_pct": 0.0
+      },
+      "3": {
+        "bets": 1,
+        "wins": 0,
+        "win_pct": 0.0
+      },
+      "8": {
+        "bets": 1,
+        "wins": 0,
+        "win_pct": 0.0
+      },
+      "9": {
+        "bets": 1,
+        "wins": 0,
+        "win_pct": 0.0
+      },
+      "13": {
+        "bets": 1,
+        "wins": 0,
+        "win_pct": 0.0
+      }
+    }
+  },
+  "equity_curve": [
+    {
+      "date": "",
+      "bank": 1000,
+      "bet_num": 0
+    },
+    {
+      "date": "2025-03-13",
+      "bank": 950,
+      "bet_num": 1
+    },
+    {
+      "date": "2025-03-28",
+      "bank": 900,
+      "bet_num": 2
+    },
+    {
+      "date": "2025-05-04",
+      "bank": 850,
+      "bet_num": 3
+    },
+    {
+      "date": "2025-05-10",
+      "bank": 800,
+      "bet_num": 4
+    },
+    {
+      "date": "2025-06-05",
+      "bank": 750,
+      "bet_num": 5
+    }
+  ],
+  "bets": [
+    {
+      "date": "2025-03-13",
+      "player": "Sam Docherty",
+      "line": 19.5,
+      "direction": "OVER",
+      "odds": 1.85,
+      "actual": 14.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 950,
+      "confidence": 0.7,
+      "edge": 29.9,
+      "year": 2025,
+      "round": "1"
+    },
+    {
+      "date": "2025-03-28",
+      "player": "Sam Docherty",
+      "line": 17.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 15.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 900,
+      "confidence": 0.7,
+      "edge": 32.2,
+      "year": 2025,
+      "round": "3"
+    },
+    {
+      "date": "2025-05-04",
+      "player": "Sam Flanders",
+      "line": 21.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 21.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 850,
+      "confidence": 0.7,
+      "edge": 31.8,
+      "year": 2025,
+      "round": "8"
+    },
+    {
+      "date": "2025-05-10",
+      "player": "Sam Flanders",
+      "line": 21.5,
+      "direction": "OVER",
+      "odds": 1.86,
+      "actual": 10.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 800,
+      "confidence": 0.7,
+      "edge": 25.3,
+      "year": 2025,
+      "round": "9"
+    },
+    {
+      "date": "2025-06-05",
+      "player": "Adam Treloar",
+      "line": 25.5,
+      "direction": "OVER",
+      "odds": 1.87,
+      "actual": 20.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 750,
+      "confidence": 0.7,
+      "edge": 23.7,
+      "year": 2025,
+      "round": "13"
+    }
+  ],
+  "generated": "2026-03-08T16:40:34.473463"
+}

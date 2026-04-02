@@ -1,0 +1,268 @@
+{
+  "rule_id": "P071",
+  "rule_name": "Ceiling Play UNDER",
+  "category": "market",
+  "description": "Line is above player's maximum of last 10 games \u2014 guaranteed UNDER",
+  "params": {
+    "min_games": 10
+  },
+  "summary": {
+    "total_bets": 9,
+    "wins": 5,
+    "win_pct": 55.6,
+    "start_bank": 1000,
+    "final_bank": 1021.0,
+    "total_profit": 21.0,
+    "roi": 4.7,
+    "max_drawdown_pct": 10.2,
+    "max_losing_streak": 2,
+    "stake": 50
+  },
+  "yearly": {
+    "2024": {
+      "bets": 5,
+      "wins": 3,
+      "profit": 34.0,
+      "win_pct": 60.0,
+      "roi": 13.6
+    },
+    "2025": {
+      "bets": 4,
+      "wins": 2,
+      "profit": -13.0,
+      "win_pct": 50.0,
+      "roi": -6.5
+    }
+  },
+  "rounds": {
+    "2024": {
+      "0": {
+        "bets": 1,
+        "wins": 1,
+        "win_pct": 100.0
+      },
+      "1": {
+        "bets": 2,
+        "wins": 1,
+        "win_pct": 50.0
+      },
+      "2": {
+        "bets": 1,
+        "wins": 1,
+        "win_pct": 100.0
+      },
+      "5": {
+        "bets": 1,
+        "wins": 0,
+        "win_pct": 0.0
+      }
+    },
+    "2025": {
+      "1": {
+        "bets": 2,
+        "wins": 1,
+        "win_pct": 50.0
+      },
+      "2": {
+        "bets": 1,
+        "wins": 0,
+        "win_pct": 0.0
+      },
+      "3": {
+        "bets": 1,
+        "wins": 1,
+        "win_pct": 100.0
+      }
+    }
+  },
+  "equity_curve": [
+    {
+      "date": "",
+      "bank": 1000,
+      "bet_num": 0
+    },
+    {
+      "date": "2024-03-09",
+      "bank": 1049.0,
+      "bet_num": 1
+    },
+    {
+      "date": "2024-03-16",
+      "bank": 1090.0,
+      "bet_num": 2
+    },
+    {
+      "date": "2024-03-16",
+      "bank": 1040.0,
+      "bet_num": 3
+    },
+    {
+      "date": "2024-03-24",
+      "bank": 1084.0,
+      "bet_num": 4
+    },
+    {
+      "date": "2024-04-14",
+      "bank": 1034.0,
+      "bet_num": 5
+    },
+    {
+      "date": "2025-03-13",
+      "bank": 984.0,
+      "bet_num": 6
+    },
+    {
+      "date": "2025-03-15",
+      "bank": 1029.0,
+      "bet_num": 7
+    },
+    {
+      "date": "2025-03-23",
+      "bank": 979.0,
+      "bet_num": 8
+    },
+    {
+      "date": "2025-03-30",
+      "bank": 1021.0,
+      "bet_num": 9
+    }
+  ],
+  "bets": [
+    {
+      "date": "2024-03-09",
+      "player": "Liam Baker",
+      "line": 20.5,
+      "direction": "UNDER",
+      "odds": 1.98,
+      "actual": 16.0,
+      "won": true,
+      "profit": 49.0,
+      "bankroll": 1049.0,
+      "confidence": 0.9,
+      "edge": 2.4,
+      "year": 2024,
+      "round": "0"
+    },
+    {
+      "date": "2024-03-16",
+      "player": "Alex Sexton",
+      "line": 21.5,
+      "direction": "UNDER",
+      "odds": 1.82,
+      "actual": 17.0,
+      "won": true,
+      "profit": 41.0,
+      "bankroll": 1090.0,
+      "confidence": 0.9,
+      "edge": 2.3,
+      "year": 2024,
+      "round": "1"
+    },
+    {
+      "date": "2024-03-16",
+      "player": "Riley Bonner",
+      "line": 22.5,
+      "direction": "UNDER",
+      "odds": 1.87,
+      "actual": 28.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1040.0,
+      "confidence": 0.9,
+      "edge": 11.1,
+      "year": 2024,
+      "round": "1"
+    },
+    {
+      "date": "2024-03-24",
+      "player": "Travis Boak",
+      "line": 20.5,
+      "direction": "UNDER",
+      "odds": 1.88,
+      "actual": 15.0,
+      "won": true,
+      "profit": 44.0,
+      "bankroll": 1084.0,
+      "confidence": 0.9,
+      "edge": 2.4,
+      "year": 2024,
+      "round": "2"
+    },
+    {
+      "date": "2024-04-14",
+      "player": "Liam Baker",
+      "line": 23.5,
+      "direction": "UNDER",
+      "odds": 1.87,
+      "actual": 25.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 1034.0,
+      "confidence": 0.9,
+      "edge": 2.1,
+      "year": 2024,
+      "round": "5"
+    },
+    {
+      "date": "2025-03-13",
+      "player": "Adam Cerra",
+      "line": 24.5,
+      "direction": "UNDER",
+      "odds": 1.88,
+      "actual": 26.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 984.0,
+      "confidence": 0.9,
+      "edge": 2.0,
+      "year": 2025,
+      "round": "1"
+    },
+    {
+      "date": "2025-03-15",
+      "player": "Caleb Daniel",
+      "line": 26.5,
+      "direction": "UNDER",
+      "odds": 1.9,
+      "actual": 24.0,
+      "won": true,
+      "profit": 45.0,
+      "bankroll": 1029.0,
+      "confidence": 0.9,
+      "edge": 5.7,
+      "year": 2025,
+      "round": "1"
+    },
+    {
+      "date": "2025-03-23",
+      "player": "Caleb Daniel",
+      "line": 27.5,
+      "direction": "UNDER",
+      "odds": 1.85,
+      "actual": 31.0,
+      "won": false,
+      "profit": -50,
+      "bankroll": 979.0,
+      "confidence": 0.9,
+      "edge": 9.1,
+      "year": 2025,
+      "round": "2"
+    },
+    {
+      "date": "2025-03-30",
+      "player": "Luke Jackson",
+      "line": 21.5,
+      "direction": "UNDER",
+      "odds": 1.84,
+      "actual": 17.0,
+      "won": true,
+      "profit": 42.0,
+      "bankroll": 1021.0,
+      "confidence": 0.9,
+      "edge": 2.3,
+      "year": 2025,
+      "round": "3"
+    }
+  ],
+  "generated": "2026-03-08T16:44:39.656140"
+}
