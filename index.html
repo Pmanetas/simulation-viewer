@@ -261,8 +261,7 @@ body {
         <span style="color:#666;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;align-self:center;margin-right:4px;">Staking</span>
         <div class="season-tab active" id="stk-flat" onclick="setStakingMode('flat')">Flat $100</div>
         <div class="season-tab" id="stk-compound" onclick="setStakingMode('compound')">Compound (split)</div>
-        <div class="season-tab" id="stk-multi50" onclick="setStakingMode('multi50')">$50 Multi (4-leg)</div>
-        <div class="season-tab" id="stk-multicompound" onclick="setStakingMode('multicompound')">Multi Compound</div>
+        <div class="season-tab" id="stk-compoundmulti" onclick="setStakingMode('compoundmulti')">Compound + $50 Multi</div>
     </div>
     <div class="chart-container"><canvas id="equityChart"></canvas></div>
     <div class="season-grid" id="seasonGrid"></div>
@@ -321,8 +320,7 @@ function setStakingMode(mode) {
     stakingMode = mode;
     document.getElementById('stk-flat').classList.toggle('active', mode === 'flat');
     document.getElementById('stk-compound').classList.toggle('active', mode === 'compound');
-    document.getElementById('stk-multi50').classList.toggle('active', mode === 'multi50');
-    document.getElementById('stk-multicompound').classList.toggle('active', mode === 'multicompound');
+    document.getElementById('stk-compoundmulti').classList.toggle('active', mode === 'compoundmulti');
     renderSummary();
     renderSeasonTabs();
     selectSeason(currentSeason);
@@ -380,11 +378,10 @@ function computeCompoundSeason(year) {
     return result;
 }
 
-const _multi50Cache = {};
-const _multiCompoundCache = {};
+const _compoundMultiCache = {};
 
-function computeMulti50Season(year) {
-    if (_multi50Cache[year]) return _multi50Cache[year];
+function computeCompoundMultiSeason(year) {
+    if (_compoundMultiCache[year]) return _compoundMultiCache[year];
     const season = DATA.seasons[year];
     const picks = season.picks;
 
@@ -394,11 +391,11 @@ function computeMulti50Season(year) {
         byRound[p.round].push(p);
     });
 
-    let bank = 0; // track cumulative profit from $0
+    let bank = 1000;
+    const multiStake = 50;
+    let multiWins = 0, multiBets = 0, multiProfit = 0;
     const rounds = {};
-    const multiPicks = [];
-    let totalWins = 0, totalBets = 0;
-    const stake = 50;
+    const compPicks = [];
 
     const sortedRounds = Object.keys(byRound).sort((a, b) => {
         const na = parseInt(a), nb = parseInt(b);
@@ -408,161 +405,62 @@ function computeMulti50Season(year) {
 
     for (const rnd of sortedRounds) {
         const roundPicks = byRound[rnd];
-        // Sort by best_rule_wp descending, take top 4
+        const numPicks = roundPicks.length;
+
+        // --- Singles: compound split (same as compound mode) ---
+        const stakePerBet = bank / numPicks;
+        let singlesProfit = 0;
+        let wins = 0;
+
+        roundPicks.forEach(p => {
+            const profit = p.won ? stakePerBet * (p.odds - 1) : -stakePerBet;
+            singlesProfit += profit;
+            if (p.won) wins++;
+            compPicks.push({ ...p, stake: stakePerBet, profit: profit });
+        });
+
+        // --- Multi: $50 flat on top 4 legs by best_rule_wp ---
         const sorted = [...roundPicks].sort((a, b) => (b.best_rule_wp || 0) - (a.best_rule_wp || 0));
         const legs = sorted.slice(0, 4);
         const combinedOdds = legs.reduce((acc, p) => acc * p.odds, 1);
         const allWon = legs.every(p => p.won);
         const legsWon = legs.filter(p => p.won).length;
-        const profit = allWon ? stake * (combinedOdds - 1) : -stake;
+        const thisMultiProfit = allWon ? multiStake * (combinedOdds - 1) : -multiStake;
 
-        bank += profit;
-        totalBets++;
-        if (allWon) totalWins++;
+        multiBets++;
+        if (allWon) multiWins++;
+        multiProfit += thisMultiProfit;
 
+        // Bank gets both singles compound + multi overlay
+        bank += singlesProfit + thisMultiProfit;
+
+        const wp = numPicks > 0 ? (wins / numPicks * 100) : 0;
         rounds[rnd] = {
-            wins: allWon ? 1 : 0,
-            bets: 1,
-            win_pct: allWon ? 100 : 0,
-            bankroll: Math.round(bank),
-            legs: legs.length,
-            legs_won: legsWon,
-            combined_odds: combinedOdds,
-            profit: profit
+            wins, bets: numPicks, win_pct: wp, bankroll: Math.round(bank),
+            multi_won: allWon, multi_legs_won: legsWon, multi_odds: combinedOdds,
+            multi_profit: thisMultiProfit, singles_profit: singlesProfit,
+            multi_legs: legs.map(p => ({ player: p.player, won: p.won, odds: p.odds, line: p.line, actual: p.actual, team: p.team, opponent: p.opponent, direction: p.direction, num_rules: p.num_rules, num_proven: p.num_proven, best_rule_wp: p.best_rule_wp }))
         };
-
-        // Store multi as a single "pick" for display
-        multiPicks.push({
-            player: legs.map(p => p.player).join(' + '),
-            team: legs.length + '-leg multi',
-            opponent: '',
-            venue: '',
-            direction: 'MULTI',
-            line: legs.map(p => p.line).join('/'),
-            odds: combinedOdds,
-            actual: legsWon + '/' + legs.length + ' legs',
-            won: allWon,
-            profit: profit,
-            stake: stake,
-            num_rules: legs.reduce((s, p) => s + p.num_rules, 0),
-            num_proven: legs.reduce((s, p) => s + p.num_proven, 0),
-            best_rule_wp: Math.max(...legs.map(p => p.best_rule_wp || 0)),
-            round: rnd,
-            date: legs[0]?.date || '',
-            rule_ids: [],
-            _legs: legs,
-        });
     }
 
     const result = {
         ...season,
         rounds,
-        picks: multiPicks,
+        picks: compPicks,
         final_bank: Math.round(bank),
-        start_bank: 0,
-        win_pct: totalBets > 0 ? (totalWins / totalBets * 100) : 0,
-        bets: totalBets,
-        wins: totalWins,
-        _isMultiMode: true,
-        _multiStake: stake,
-        _multiLabel: '$50 Flat Multi (4-leg)',
+        start_bank: 1000,
+        _isCompoundMulti: true,
+        _multiWins: multiWins,
+        _multiBets: multiBets,
+        _multiProfit: Math.round(multiProfit),
     };
-    _multi50Cache[year] = result;
-    return result;
-}
-
-function computeMultiCompoundSeason(year) {
-    if (_multiCompoundCache[year]) return _multiCompoundCache[year];
-    const season = DATA.seasons[year];
-    const picks = season.picks;
-
-    const byRound = {};
-    picks.forEach(p => {
-        if (!byRound[p.round]) byRound[p.round] = [];
-        byRound[p.round].push(p);
-    });
-
-    let bank = 50; // start with $50
-    const rounds = {};
-    const multiPicks = [];
-    let totalWins = 0, totalBets = 0;
-
-    const sortedRounds = Object.keys(byRound).sort((a, b) => {
-        const na = parseInt(a), nb = parseInt(b);
-        if (!isNaN(na) && !isNaN(nb)) return na - nb;
-        return a.localeCompare(b);
-    });
-
-    for (const rnd of sortedRounds) {
-        const roundPicks = byRound[rnd];
-        const sorted = [...roundPicks].sort((a, b) => (b.best_rule_wp || 0) - (a.best_rule_wp || 0));
-        const legs = sorted.slice(0, 4);
-        const combinedOdds = legs.reduce((acc, p) => acc * p.odds, 1);
-        const allWon = legs.every(p => p.won);
-        const legsWon = legs.filter(p => p.won).length;
-
-        const stakeThisRound = bank; // bet entire bankroll
-        const profit = allWon ? stakeThisRound * (combinedOdds - 1) : -stakeThisRound;
-
-        bank += profit;
-        if (bank < 0) bank = 0;
-        totalBets++;
-        if (allWon) totalWins++;
-
-        rounds[rnd] = {
-            wins: allWon ? 1 : 0,
-            bets: 1,
-            win_pct: allWon ? 100 : 0,
-            bankroll: Math.round(bank),
-            legs: legs.length,
-            legs_won: legsWon,
-            combined_odds: combinedOdds,
-            profit: profit
-        };
-
-        multiPicks.push({
-            player: legs.map(p => p.player).join(' + '),
-            team: legs.length + '-leg multi',
-            opponent: '',
-            venue: '',
-            direction: 'MULTI',
-            line: legs.map(p => p.line).join('/'),
-            odds: combinedOdds,
-            actual: legsWon + '/' + legs.length + ' legs',
-            won: allWon,
-            profit: profit,
-            stake: stakeThisRound,
-            num_rules: legs.reduce((s, p) => s + p.num_rules, 0),
-            num_proven: legs.reduce((s, p) => s + p.num_proven, 0),
-            best_rule_wp: Math.max(...legs.map(p => p.best_rule_wp || 0)),
-            round: rnd,
-            date: legs[0]?.date || '',
-            rule_ids: [],
-            _legs: legs,
-        });
-    }
-
-    const result = {
-        ...season,
-        rounds,
-        picks: multiPicks,
-        final_bank: Math.round(bank),
-        start_bank: 50,
-        win_pct: totalBets > 0 ? (totalWins / totalBets * 100) : 0,
-        bets: totalBets,
-        wins: totalWins,
-        _isMultiMode: true,
-        _multiStake: 'compound',
-        _multiLabel: 'Multi Compound ($50 start)',
-    };
-    _multiCompoundCache[year] = result;
+    _compoundMultiCache[year] = result;
     return result;
 }
 
 function getSeasonData(year) {
     if (stakingMode === 'flat') return DATA.seasons[year];
-    if (stakingMode === 'multi50') return computeMulti50Season(year);
-    if (stakingMode === 'multicompound') return computeMultiCompoundSeason(year);
+    if (stakingMode === 'compoundmulti') return computeCompoundMultiSeason(year);
     return computeCompoundSeason(year);
 }
 
@@ -706,31 +604,28 @@ async function initBacktest() {
 }
 
 function renderSummary() {
-    const isMulti = stakingMode === 'multi50' || stakingMode === 'multicompound';
-    if (isMulti) {
+    if (stakingMode === 'compoundmulti') {
         let yearCards = '';
-        let totalMultis = 0, totalMultiWins = 0, totalProfit = 0;
+        let totalMultiWins = 0, totalMultiBets = 0, totalMultiProfit = 0;
         for (const yr of Object.keys(DATA.seasons).sort()) {
             const s = getSeasonData(yr);
             const fb = s.final_bank || 0;
-            const sb = s.start_bank || 0;
-            totalMultis += s.bets || 0;
-            totalMultiWins += s.wins || 0;
-            totalProfit += fb - sb;
-            const fbStr = stakingMode === 'multicompound' ? '$' + Math.round(fb).toLocaleString() : (fb >= 0 ? '+$' : '-$') + Math.abs(Math.round(fb)).toLocaleString();
-            yearCards += `<div class="summary-card"><div class="label">${yr}</div><div class="value ${fb >= (sb || 0) ? 'green' : 'red'}">${stakingMode === 'multicompound' ? '$' + sb + ' → ' + fbStr : fbStr}</div></div>`;
+            totalMultiWins += s._multiWins || 0;
+            totalMultiBets += s._multiBets || 0;
+            totalMultiProfit += s._multiProfit || 0;
+            yearCards += `<div class="summary-card"><div class="label">${yr}</div><div class="value green">$1,000 → $${Math.round(fb).toLocaleString()}</div></div>`;
         }
-        const multiWp = totalMultis > 0 ? (totalMultiWins / totalMultis * 100).toFixed(1) : 0;
-        const wpClass = multiWp >= 30 ? 'green' : multiWp >= 20 ? 'yellow' : 'red';
-        const stakeLabel = stakingMode === 'multi50' ? '$50 flat / week' : 'Compound (full bankroll)';
+        const multiWp = totalMultiBets > 0 ? (totalMultiWins / totalMultiBets * 100).toFixed(1) : 0;
+        const o = DATA.overall;
+        const wpClass = o.win_pct >= 55 ? 'green' : o.win_pct >= 50 ? 'yellow' : 'red';
         document.getElementById('summaryRow').innerHTML = `
-            <div class="summary-card"><div class="label">Total Multis</div><div class="value">${totalMultis}</div></div>
-            <div class="summary-card"><div class="label">Wins</div><div class="value green">${totalMultiWins}</div></div>
-            <div class="summary-card"><div class="label">Multi Win %</div><div class="value ${wpClass}">${multiWp}%</div></div>
-            <div class="summary-card"><div class="label">Net Profit</div><div class="value ${totalProfit >= 0 ? 'green' : 'red'}">${totalProfit >= 0 ? '+' : ''}$${Math.round(totalProfit).toLocaleString()}</div></div>
+            <div class="summary-card"><div class="label">Singles Bets</div><div class="value">${o.total_bets}</div></div>
+            <div class="summary-card"><div class="label">Singles Win %</div><div class="value ${wpClass}">${o.win_pct}%</div></div>
+            <div class="summary-card"><div class="label">4-Leg Multis</div><div class="value blue">${totalMultiBets}</div></div>
+            <div class="summary-card"><div class="label">Multi Wins</div><div class="value ${totalMultiWins > 0 ? 'green' : 'red'}">${totalMultiWins} (${multiWp}%)</div></div>
+            <div class="summary-card"><div class="label">Multi P/L</div><div class="value ${totalMultiProfit >= 0 ? 'green' : 'red'}">${totalMultiProfit >= 0 ? '+' : ''}$${totalMultiProfit.toLocaleString()}</div></div>
             ${yearCards}
-            <div class="summary-card"><div class="label">Legs</div><div class="value blue">4-leg</div></div>
-            <div class="summary-card"><div class="label">Staking</div><div class="value">${stakeLabel}</div></div>
+            <div class="summary-card"><div class="label">Staking</div><div class="value">Compound + $50 Multi</div></div>
         `;
         return;
     }
@@ -757,21 +652,17 @@ function renderSummary() {
 function renderSeasonTabs() {
     const tabs = document.getElementById('seasonTabs');
     tabs.innerHTML = '';
-    const isMulti = stakingMode === 'multi50' || stakingMode === 'multicompound';
     for (const year of Object.keys(DATA.seasons).sort()) {
         const s = getSeasonData(year);
         const tab = document.createElement('div');
         tab.className = 'season-tab';
         tab.id = `tab-${year}`;
         const fb = s.final_bank || 0;
-        if (isMulti) {
-            const wp = s.win_pct || 0;
-            const sb = s.start_bank || 0;
-            if (stakingMode === 'multicompound') {
-                tab.textContent = `${year} — ${wp.toFixed(0)}% — $${sb} → $${Math.round(fb).toLocaleString()}`;
-            } else {
-                tab.textContent = `${year} — ${wp.toFixed(0)}% — Net: ${fb >= 0 ? '+' : ''}$${Math.round(fb).toLocaleString()}`;
-            }
+        if (stakingMode === 'compoundmulti') {
+            const mw = s._multiWins || 0;
+            const mb = s._multiBets || 0;
+            const mp = s._multiProfit || 0;
+            tab.textContent = `${year} — $1K → $${(fb/1000).toFixed(1)}K — Multi ${mw}/${mb} (${mp >= 0 ? '+' : ''}$${mp})`;
         } else {
             tab.textContent = `${year} — ${DATA.seasons[year].win_pct}% — $1K → $${(fb/1000).toFixed(1)}K`;
         }
@@ -908,33 +799,20 @@ function renderSeasonGrid() {
         return a[0].localeCompare(b[0]);
     });
 
-    const isMulti = stakingMode === 'multi50' || stakingMode === 'multicompound';
     grid.innerHTML = rounds.map(([rnd, stats]) => {
-        if (isMulti) {
-            const won = stats.wins > 0;
-            const cls = won ? 'hot' : 'cold';
-            const bankVal = stats.bankroll || 0;
-            const bankStr = Math.abs(bankVal) >= 1000 ? `$${(bankVal/1000).toFixed(1)}K` : `$${bankVal}`;
-            const odds = stats.combined_odds ? stats.combined_odds.toFixed(1) + 'x' : '';
-            return `
-                <div class="season-cell ${cls}" id="cell-${rnd}" onclick="selectRound('${rnd}')">
-                    <div class="rnd">R${rnd}</div>
-                    <div class="wp ${won ? 'green' : 'red'}">${won ? 'WON' : 'LOST'}</div>
-                    <div class="record">${stats.legs_won || 0}/4 legs</div>
-                    <div class="record" style="color:#fbbf24">${odds}</div>
-                    <div class="record" style="color:#6366f1">${bankStr}</div>
-                </div>
-            `;
-        }
         const wp = stats.win_pct;
         const cls = wp >= 60 ? 'hot' : wp < 45 ? 'cold' : '';
         const wpClass = wp >= 60 ? 'green' : wp < 45 ? 'red' : 'yellow';
         const bank = stats.bankroll ? `$${(stats.bankroll/1000).toFixed(1)}K` : '';
+        const multiLine = (stakingMode === 'compoundmulti' && stats.multi_odds)
+            ? `<div class="record" style="color:${stats.multi_won ? '#34d399' : '#f87171'}">${stats.multi_won ? '✓' : '✗'} Multi ${stats.multi_odds.toFixed(1)}x</div>`
+            : '';
         return `
             <div class="season-cell ${cls}" id="cell-${rnd}" onclick="selectRound('${rnd}')">
                 <div class="rnd">R${rnd}</div>
                 <div class="wp ${wpClass}">${wp.toFixed(0)}%</div>
                 <div class="record">${stats.wins}/${stats.bets}</div>
+                ${multiLine}
                 <div class="record" style="color:#6366f1">${bank}</div>
             </div>
         `;
@@ -949,59 +827,8 @@ function selectRound(rnd) {
     const season = getSeasonData(currentSeason);
     const stats = season.rounds[rnd];
     const picks = season.picks.filter(p => p.round === rnd);
-    const isMulti = stakingMode === 'multi50' || stakingMode === 'multicompound';
 
-    if (isMulti && picks.length > 0) {
-        const multi = picks[0]; // one multi per round
-        const legs = multi._legs || [];
-        const legsWon = legs.filter(p => p.won).length;
-        const profitClass = multi.profit >= 0 ? 'green' : 'red';
-
-        document.getElementById('roundSummary').innerHTML = `
-            <div class="round-stat"><div class="label">Round</div><div class="value blue">${rnd}</div></div>
-            <div class="round-stat"><div class="label">Multi</div><div class="value blue">4-leg</div></div>
-            <div class="round-stat"><div class="label">Legs Won</div><div class="value ${legsWon === 4 ? 'green' : 'red'}">${legsWon}/4</div></div>
-            <div class="round-stat"><div class="label">Combined Odds</div><div class="value yellow">$${multi.odds.toFixed(2)}</div></div>
-            <div class="round-stat"><div class="label">Result</div><div class="value ${multi.won ? 'green' : 'red'}">${multi.won ? 'WON' : 'LOST'}</div></div>
-            <div class="round-stat"><div class="label">Stake</div><div class="value">$${multi.stake.toFixed(0)}</div></div>
-            <div class="round-stat"><div class="label">Profit</div><div class="value ${profitClass}">${multi.profit >= 0 ? '+' : ''}$${Math.round(multi.profit).toLocaleString()}</div></div>
-            <div class="round-stat"><div class="label">Bankroll</div><div class="value blue">$${stats.bankroll ? stats.bankroll.toLocaleString() : '-'}</div></div>
-        `;
-
-        // Show individual legs in the table
-        const thead = document.querySelector('#picksTable thead tr');
-        thead.innerHTML = `
-            <th>Leg</th><th>Player</th><th>Team</th><th>vs</th>
-            <th>Direction</th><th>Line</th><th>Odds</th><th>Actual</th>
-            <th>Result</th><th>Rules</th><th>Best Rule WP</th>
-        `;
-
-        const tbody = document.getElementById('picksBody');
-        tbody.innerHTML = legs.map((p, i) => {
-            const dirClass = p.direction === 'OVER' ? 'over' : 'under';
-            const resultClass = p.won ? 'w' : 'l';
-            const rowClass = p.won ? 'win' : 'loss';
-            return `
-                <tr class="${rowClass}">
-                    <td>${i + 1}</td>
-                    <td class="player">${p.player}</td>
-                    <td>${p.team || ''}</td>
-                    <td>${p.opponent || ''}</td>
-                    <td><span class="direction ${dirClass}">${p.direction}</span></td>
-                    <td>${p.line}</td>
-                    <td>${p.odds.toFixed(2)}</td>
-                    <td>${p.actual}</td>
-                    <td><span class="result ${resultClass}">${p.won ? 'W' : 'L'}</span></td>
-                    <td><span class="rule-count">${p.num_rules} rules</span> <span class="rules-backing">(${p.num_proven} proven)</span></td>
-                    <td>${(p.best_rule_wp * 100).toFixed(1)}%</td>
-                </tr>
-            `;
-        }).join('');
-        return;
-    }
-
-    // Standard (non-multi) display
-    // Restore standard header
+    // Standard header
     const thead = document.querySelector('#picksTable thead tr');
     thead.innerHTML = `
         <th>#</th><th>Player</th><th>Team</th><th>vs</th>
@@ -1016,20 +843,32 @@ function selectRound(rnd) {
     const wpClass = wp >= 60 ? 'green' : wp < 45 ? 'red' : 'yellow';
     const profitClass = profit >= 0 ? 'green' : 'red';
 
+    // Multi info for combined mode
+    let multiCards = '';
+    if (stakingMode === 'compoundmulti' && stats.multi_odds) {
+        const mp = stats.multi_profit || 0;
+        multiCards = `
+            <div class="round-stat"><div class="label">Multi</div><div class="value ${stats.multi_won ? 'green' : 'red'}">${stats.multi_won ? 'WON' : 'LOST'} (${stats.multi_legs_won}/4)</div></div>
+            <div class="round-stat"><div class="label">Multi Odds</div><div class="value yellow">${stats.multi_odds.toFixed(2)}x</div></div>
+            <div class="round-stat"><div class="label">Multi P/L</div><div class="value ${mp >= 0 ? 'green' : 'red'}">${mp >= 0 ? '+' : ''}$${Math.round(mp)}</div></div>
+        `;
+    }
+
     document.getElementById('roundSummary').innerHTML = `
         <div class="round-stat"><div class="label">Round</div><div class="value blue">${rnd}</div></div>
         <div class="round-stat"><div class="label">Bets</div><div class="value">${picks.length}</div></div>
         <div class="round-stat"><div class="label">Wins</div><div class="value green">${wins}</div></div>
         <div class="round-stat"><div class="label">Losses</div><div class="value red">${losses}</div></div>
         <div class="round-stat"><div class="label">Win %</div><div class="value ${wpClass}">${wp.toFixed(1)}%</div></div>
-        <div class="round-stat"><div class="label">Profit</div><div class="value ${profitClass}">$${profit >= 0 ? '+' : ''}${profit.toFixed(0)}</div></div>
+        <div class="round-stat"><div class="label">Singles P/L</div><div class="value ${profitClass}">$${profit >= 0 ? '+' : ''}${profit.toFixed(0)}</div></div>
+        ${multiCards}
         <div class="round-stat"><div class="label">Bankroll</div><div class="value blue">$${stats.bankroll ? stats.bankroll.toLocaleString() : '-'}</div></div>
         <div class="round-stat"><div class="label">Stake/Bet</div><div class="value">$${picks[0]?.stake ? picks[0].stake.toFixed(0) : '-'}</div></div>
     `;
 
-    // Picks table
+    // Picks table — show singles, then multi legs if in combined mode
     const tbody = document.getElementById('picksBody');
-    tbody.innerHTML = picks.map((p, i) => {
+    let rows = picks.map((p, i) => {
         const dirClass = p.direction === 'OVER' ? 'over' : 'under';
         const resultClass = p.won ? 'w' : 'l';
         const rowClass = p.won ? 'win' : 'loss';
@@ -1051,6 +890,35 @@ function selectRound(rnd) {
             </tr>
         `;
     }).join('');
+
+    // Add multi legs section below singles in combined mode
+    if (stakingMode === 'compoundmulti' && stats.multi_legs) {
+        const mOdds = stats.multi_odds ? stats.multi_odds.toFixed(2) : '?';
+        const mResult = stats.multi_won ? '<span class="result w">WON</span>' : '<span class="result l">LOST</span>';
+        rows += `<tr style="background:#1a1a2e;border-top:2px solid #6366f1"><td colspan="12" style="padding:10px 12px;color:#6366f1;font-weight:700;font-size:12px">4-LEG MULTI — $50 @ ${mOdds}x — ${mResult}</td></tr>`;
+        rows += stats.multi_legs.map((leg, i) => {
+            const dirClass = (leg.direction || '').toLowerCase() === 'over' ? 'over' : 'under';
+            const resultClass = leg.won ? 'w' : 'l';
+            const rowClass = leg.won ? 'win' : 'loss';
+            return `
+                <tr class="${rowClass}" style="background:${leg.won ? 'rgba(52,211,153,0.08)' : 'rgba(248,113,113,0.08)'}">
+                    <td style="color:#6366f1">L${i+1}</td>
+                    <td class="player">${leg.player}</td>
+                    <td>${leg.team || ''}</td>
+                    <td>${leg.opponent || ''}</td>
+                    <td><span class="direction ${dirClass}">${leg.direction}</span></td>
+                    <td>${leg.line}</td>
+                    <td>${leg.odds.toFixed(2)}</td>
+                    <td>${leg.actual}</td>
+                    <td><span class="result ${resultClass}">${leg.won ? 'W' : 'L'}</span></td>
+                    <td><span class="rule-count">${leg.num_rules} rules</span></td>
+                    <td>${(leg.best_rule_wp * 100).toFixed(1)}%</td>
+                    <td></td>
+                </tr>
+            `;
+        }).join('');
+    }
+    tbody.innerHTML = rows;
 }
 
 function selectInfoTab(tab) {
